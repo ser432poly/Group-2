@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\Maze_Of_Doom.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{E3C25AD7-ED3D-42A1-9FE3-D8C4406EDA25}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\Maze_Of_Doom.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\Maze_Of_DoomEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{213E143E-10E8-4211-99FE-0737B557359C}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultInput.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\Maze_Of_Doom">
+			<UniqueIdentifier>{512B436B-13B6-4495-97CA-B5E9CC3E694B}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\Maze_Of_Doom\Maze_Of_Doom.Build.cs">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\Maze_Of_Doom\Maze_Of_Doom.cpp">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Maze_Of_Doom\Maze_Of_Doom.h">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Maze_Of_Doom\Maze_Of_DoomCharacter.cpp">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Maze_Of_Doom\Maze_Of_DoomCharacter.h">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Maze_Of_Doom\Maze_Of_DoomGameMode.cpp">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Maze_Of_Doom\Maze_Of_DoomGameMode.h">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</ClInclude >
+	</ItemGroup>
+</Project>
