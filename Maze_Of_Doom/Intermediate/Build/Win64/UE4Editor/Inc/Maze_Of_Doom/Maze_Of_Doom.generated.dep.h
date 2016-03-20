@@ -11,3 +11,6 @@
 #ifndef MAZE_OF_DOOM_Maze_Of_DoomGameMode_generated_h
 	#include "Maze_Of_DoomGameMode.h"
 #endif
+#ifndef MAZE_OF_DOOM_Pickup_generated_h
+	#include "Pickup.h"
+#endif

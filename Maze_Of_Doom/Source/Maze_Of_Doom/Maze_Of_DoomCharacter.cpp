@@ -30,7 +30,7 @@ AMaze_Of_DoomCharacter::AMaze_Of_DoomCharacter()
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->AttachTo(RootComponent);
 	CameraBoom->TargetArmLength = 300.0f; // The camera follows at this distance behind the character	
-	CameraBoom->bUsePawnControlRotation = true; // Rotate the arm based on the controller
+	CameraBoom->bUsePawnControlRotation = false; // Rotate the arm based on the controller
 
 	// Create a follow camera
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
@@ -57,10 +57,10 @@ void AMaze_Of_DoomCharacter::SetupPlayerInputComponent(class UInputComponent* In
 	// We have 2 versions of the rotation bindings to handle different kinds of devices differently
 	// "turn" handles devices that provide an absolute delta, such as a mouse.
 	// "turnrate" is for devices that we choose to treat as a rate of change, such as an analog joystick
-	InputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
-	InputComponent->BindAxis("TurnRate", this, &AMaze_Of_DoomCharacter::TurnAtRate);
-	InputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
-	InputComponent->BindAxis("LookUpRate", this, &AMaze_Of_DoomCharacter::LookUpAtRate);
+	//InputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
+	//InputComponent->BindAxis("TurnRate", this, &AMaze_Of_DoomCharacter::TurnAtRate);
+	//InputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
+	//InputComponent->BindAxis("LookUpRate", this, &AMaze_Of_DoomCharacter::LookUpAtRate);
 
 	// handle touch devices
 	InputComponent->BindTouch(IE_Pressed, this, &AMaze_Of_DoomCharacter::TouchStarted);
