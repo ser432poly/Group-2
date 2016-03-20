@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\Maze_Of_Doom.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{E3C25AD7-ED3D-42A1-9FE3-D8C4406EDA25}</UniqueIdentifier>
+			<UniqueIdentifier>{0BE246C2-1ADD-423F-89A0-C18407F8649B}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\Maze_Of_Doom.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{213E143E-10E8-4211-99FE-0737B557359C}</UniqueIdentifier>
+			<UniqueIdentifier>{D295616A-3215-4680-8B66-F6AC94F9DC81}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -31,7 +31,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\Maze_Of_Doom">
-			<UniqueIdentifier>{512B436B-13B6-4495-97CA-B5E9CC3E694B}</UniqueIdentifier>
+			<UniqueIdentifier>{C472BD7F-5C0B-42AF-8267-9265D89E2F02}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\Maze_Of_Doom\Maze_Of_Doom.Build.cs">
 			<Filter>Source\Maze_Of_Doom</Filter>
@@ -52,6 +52,12 @@
 			<Filter>Source\Maze_Of_Doom</Filter>
 		</ClCompile >
 		<ClInclude Include="..\..\Source\Maze_Of_Doom\Maze_Of_DoomGameMode.h">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Maze_Of_Doom\Pickup.cpp">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Maze_Of_Doom\Pickup.h">
 			<Filter>Source\Maze_Of_Doom</Filter>
 		</ClInclude >
 	</ItemGroup>
