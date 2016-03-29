@@ -9,6 +9,7 @@ ARoom::ARoom(){}
 ARoom::ARoom(int32 roomType)
 {
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+
 	//PrimaryActorTick.bCanEverTick = true;	
 
 	if (roomType = 0) //DeadEnd Room
@@ -69,6 +70,7 @@ int ARoom::getDoor(int32 door)
 }
 
 void ARoom::setDoor(int32 door, int32 newValue)
+
 {
 	doors[door] = newValue;
 }
@@ -85,4 +87,3 @@ void ARoom::RotateRoom(int32 rotates)
 		doors[3] = temp;
 	}
 }
-

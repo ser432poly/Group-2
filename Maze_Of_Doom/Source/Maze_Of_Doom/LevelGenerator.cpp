@@ -29,7 +29,6 @@ void ALevelGenerator::BeginPlay()
 void ALevelGenerator::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 //Generate the Level
@@ -70,14 +69,8 @@ void ALevelGenerator::CreateLevel()
 				{
 					roomType = rand() % 5;
 				}
-
 				ARoom* room = new ARoom(roomType);
 			}
 		}
 	}
 }
-
-
-
-
-
