@@ -64,7 +64,7 @@ void ARoom::Tick(float DeltaTime)
 
 }
 
-int ARoom::getDoor(int32 door)
+int32 ARoom::getDoor(int32 door)
 {
 	return doors[door];
 }
@@ -73,6 +73,34 @@ void ARoom::setDoor(int32 door, int32 newValue)
 
 {
 	doors[door] = newValue;
+}
+
+int32 ARoom::getX()
+{
+	return x;
+}
+
+void ARoom::setPos(int32 newX, int32 newY)
+
+{
+	x = newX;
+	y = newY;
+}
+
+int32 ARoom::getY()
+{
+	return y;
+}
+
+bool ARoom::getOnPath()
+{
+	return path;
+}
+
+void ARoom::setOnPath()
+
+{
+	path = true;
 }
 
 //Rotates the room 90 * rotates

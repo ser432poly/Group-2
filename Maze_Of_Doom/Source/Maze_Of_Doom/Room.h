@@ -26,11 +26,31 @@ public:
 
 	//Getter
 	UFUNCTION(BlueprintPure, Category = "Room")
-		int getDoor(int32 door);
+		int32 getDoor(int32 door);
 
 	//Setter
 	UFUNCTION(BlueprintCallable, Category = "Room")
 		void setDoor(int32 door, int32 newValue);
+
+	//Getter
+	UFUNCTION(BlueprintPure, Category = "Room")
+		bool getOnPath();
+
+	//Setter
+	UFUNCTION(BlueprintCallable, Category = "Room")
+		void setOnPath();
+
+	//Getter
+	UFUNCTION(BlueprintPure, Category = "Room")
+		int32 getX();
+
+	//Setter
+	UFUNCTION(BlueprintCallable, Category = "Room")
+		void setPos(int32 x, int32 y);
+
+	//Getter
+	UFUNCTION(BlueprintPure, Category = "Room")
+		int32 getY();
 
 
 private:
@@ -40,4 +60,11 @@ private:
 
 	//Used when spawning rooms to rotate room appropiately
 	int32 direction = 0; //Every rooms first door is pointing down
+
+	//Position of Room from spawn room
+	int32 x;
+	int32 y;
+
+	//Is the room on the path or not
+	bool path;
 };
