@@ -51,7 +51,7 @@ void ALevelGenerator::CreateLevel()
 	currentRoom = new ARoom(roomType);
 	rooms.push_back(currentRoom);
 	path.push_back(currentRoom);
-	currentRoom->setOnPath();
+	currentRoom->setOnPath(true);
 	currentRoom->setPos(0, 0);
 
 	//Keep adding rooms until all doors have rooms connected to them
@@ -159,7 +159,18 @@ void ALevelGenerator::CreateLevel()
 				{
 					if (!(room->getOnPath()))
 					{
-						
+						chance = rand() % 10;
+						//Decreased chance to add to path
+						if (path.size() >= minPath)
+						{							
+							chance = chance + 2;
+						}
+						if (chance < 4)
+						{
+							path.push_back(room);
+							room->setOnPath(true);
+							currentRoom->setOnPath(false);
+						}
 					}
 				}
 				//Add the room to the rooms list

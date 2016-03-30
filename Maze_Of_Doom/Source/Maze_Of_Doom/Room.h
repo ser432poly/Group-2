@@ -38,7 +38,7 @@ public:
 
 	//Setter
 	UFUNCTION(BlueprintCallable, Category = "Room")
-		void setOnPath();
+		void setOnPath(bool p);
 
 	//Getter
 	UFUNCTION(BlueprintPure, Category = "Room")

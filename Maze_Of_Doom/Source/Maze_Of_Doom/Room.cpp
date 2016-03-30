@@ -97,10 +97,10 @@ bool ARoom::getOnPath()
 	return path;
 }
 
-void ARoom::setOnPath()
+void ARoom::setOnPath(bool p)
 
 {
-	path = true;
+	path = p;
 }
 
 //Rotates the room 90 * rotates
