@@ -21,6 +21,7 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 
 	//Generate the level
+	UFUNCTION(BlueprintCallable, Category = "Room")
 	void CreateLevel();
 
 private:

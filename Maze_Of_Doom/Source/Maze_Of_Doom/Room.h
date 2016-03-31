@@ -13,8 +13,7 @@ class MAZE_OF_DOOM_API ARoom : public AActor
 public:
 	// Sets default values for this actor's properties
 	ARoom();
-	ARoom(int32 roomType);
-
+	
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
@@ -51,6 +50,9 @@ public:
 	//Getter
 	UFUNCTION(BlueprintPure, Category = "Room")
 		int32 getY();
+
+	//Setter
+	void setType(int32 roomType);
 
 
 private:

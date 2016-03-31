@@ -38,9 +38,9 @@ void ALevelGenerator::CreateLevel()
 	std::list<ARoom*> path; //Rooms that lead to the exit
 	std::list<ARoom*> done; //Rooms that have all doors connected
 	ARoom* currentRoom; //Room that is being checked
-	ARoom* room; //Room that is being added to currentRoom
-	int32 minPath = level % 5 + 5;
-	int32 maxPath = level % 3 + 5;
+	ARoom* room = nullptr; //Room that is being added to currentRoom
+	int32 minPath = (level / 5) + 5;
+	int32 maxPath = (level / 3) + 5;
 	int32 roomLimit = 5 + level; //How many rooms to generate before all new rooms become deadends
 	int32 chance;
 
@@ -48,14 +48,15 @@ void ALevelGenerator::CreateLevel()
 	int32 roomType = rand() % 5;
 
 	//Create the spawn room and add it to the path
-	currentRoom = new ARoom(roomType);
+	currentRoom = ConstructObject<ARoom>(ARoom::StaticClass());
+	currentRoom->setType(roomType);
 	rooms.push_back(currentRoom);
 	path.push_back(currentRoom);
 	currentRoom->setOnPath(true);
 	currentRoom->setPos(0, 0);
 
 	//Keep adding rooms until all doors have rooms connected to them
-	while (!rooms.empty)
+	while (!rooms.empty())
 	{
 		//Rooms are made up of 4 walls
 		for (int32 i = 0; i < 4; i++)
@@ -111,7 +112,7 @@ void ALevelGenerator::CreateLevel()
 					chance = chance - level;
 					//Only make dead ends once room limit is reached
 					//Once room limit reach make all remaining doors dead ends
-					if (done.size >= roomLimit)
+					if (((int32) done.size()) >= roomLimit)
 					{
 						roomType = 0;
 					}
@@ -121,7 +122,8 @@ void ALevelGenerator::CreateLevel()
 					}
 
 					//Create the room from the room type
-					room = new ARoom(roomType);
+					room = ConstructObject<ARoom>(ARoom::StaticClass());
+					room->setType(roomType);
 
 					//Always connect from door 0 so set door 0 to connected
 					room->setDoor(0, 2);
