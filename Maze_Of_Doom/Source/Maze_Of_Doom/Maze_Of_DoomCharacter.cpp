@@ -2,6 +2,7 @@
 
 #include "Maze_Of_Doom.h"
 #include "Maze_Of_DoomCharacter.h"
+#include "Pickup.h"
 
 //////////////////////////////////////////////////////////////////////////
 // AMaze_Of_DoomCharacter
@@ -37,6 +38,11 @@ AMaze_Of_DoomCharacter::AMaze_Of_DoomCharacter()
 	FollowCamera->AttachTo(CameraBoom, USpringArmComponent::SocketName); // Attach the camera to the end of the boom and let the boom adjust to match the controller orientation
 	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 
+	// Create a collection Sphere
+	CollectionSphere = CreateDefaultSubobject<USphereComponent>(TEXT("CollectionSphere"));
+	CollectionSphere->AttachTo(RootComponent);
+	CollectionSphere->SetSphereRadius(100.f);
+
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 }
@@ -50,6 +56,8 @@ void AMaze_Of_DoomCharacter::SetupPlayerInputComponent(class UInputComponent* In
 	check(InputComponent);
 	InputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	InputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+
+	InputComponent->BindAction("Collect", IE_Pressed, this, &AMaze_Of_DoomCharacter::CollectPickups);
 
 	InputComponent->BindAxis("MoveForward", this, &AMaze_Of_DoomCharacter::MoveForward);
 	InputComponent->BindAxis("MoveRight", this, &AMaze_Of_DoomCharacter::MoveRight);
@@ -123,5 +131,35 @@ void AMaze_Of_DoomCharacter::MoveRight(float Value)
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
+	}
+}
+
+void AMaze_Of_DoomCharacter::CollectPickups()
+{
+	// Get all overlapping Actors and store them in an array
+	TArray<AActor*> CollectedActors;
+	CollectionSphere->GetOverlappingActors(CollectedActors);
+
+	// keep track of the collected battery power
+	//float CollectedPower = 0;
+
+	// For each Actor we collected
+	for (int32 iCollected = 0; iCollected < CollectedActors.Num(); ++iCollected)
+	{
+		//Cast the actor to APickup
+		APickup* const TestPickup = Cast<APickup>(CollectedActors[iCollected]);
+
+		//If the cast is successful and the pickup is valid and active
+		if (TestPickup && !TestPickup->IsPendingKill() && TestPickup->IsActive())
+		{
+			// Call the pickup's WasCollected function
+			TestPickup->WasCollected();
+
+			// Deactivate the pickup
+			TestPickup->SetActive(false);
+
+		}
+	
+	//UpdatePower(CollectedPower);
 	}
 }
