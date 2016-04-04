@@ -33,14 +33,6 @@ public:
 
 	//Getter
 	UFUNCTION(BlueprintPure, Category = "Room")
-		bool getOnPath();
-
-	//Setter
-	UFUNCTION(BlueprintCallable, Category = "Room")
-		void setOnPath(bool p);
-
-	//Getter
-	UFUNCTION(BlueprintPure, Category = "Room")
 		int32 getX();
 
 	//Setter
@@ -60,13 +52,7 @@ private:
 	//Value determines type of wall, 0 = wall, 1 = door, 2 = connected door, 3 = locked door, 4 = connected lock door
 	int32 doors[4];
 
-	//Used when spawning rooms to rotate room appropiately
-	int32 direction = 0; //Every rooms first door is pointing down
-
 	//Position of Room from spawn room
 	int32 x;
 	int32 y;
-
-	//Is the room on the path or not
-	bool path;
 };

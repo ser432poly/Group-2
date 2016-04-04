@@ -2,7 +2,7 @@
 
 #include "Maze_Of_Doom.h"
 #include "LevelGenerator.h"
-#include <Room.h>
+#include "Room.h"
 #include <stdlib.h>
 #include <time.h>
 #include <list>
@@ -31,17 +31,25 @@ void ALevelGenerator::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
+void ALevelGenerator::addDone(ARoom r)
+{
+	done.push_back(r);
+}
+
+std::list<ARoom> ALevelGenerator::getDone()
+{
+	return done;
+}
+
 //Generate the Level
 void ALevelGenerator::CreateLevel()
 {
 	std::list<ARoom*> rooms; //Rooms that still need to connect all doors
-	std::list<ARoom*> path; //Rooms that lead to the exit
-	std::list<ARoom*> done; //Rooms that have all doors connected
 	ARoom* currentRoom; //Room that is being checked
 	ARoom* room = nullptr; //Room that is being added to currentRoom
-	int32 minPath = (level / 5) + 5;
-	int32 maxPath = (level / 3) + 5;
-	int32 roomLimit = 5 + level; //How many rooms to generate before all new rooms become deadends
+	int32 minPath = (level / 5) + 2;
+	int32 maxPath = (level / 3) + 4;
+	int32 roomLimit = 3 + level; //How many rooms to generate before all new rooms become deadends
 	int32 chance;
 
 	srand(time(NULL));
@@ -51,8 +59,6 @@ void ALevelGenerator::CreateLevel()
 	currentRoom = ConstructObject<ARoom>(ARoom::StaticClass());
 	currentRoom->setType(roomType);
 	rooms.push_back(currentRoom);
-	path.push_back(currentRoom);
-	currentRoom->setOnPath(true);
 	currentRoom->setPos(0, 0);
 
 	//Keep adding rooms until all doors have rooms connected to them
@@ -95,13 +101,49 @@ void ALevelGenerator::CreateLevel()
 					}
 
 					//Check if there is a room
-					ARoom* temp = *it;
-					if (checkX == temp->getX() && checkY == temp->getY())
+					ARoom temp = *it;
+					if (checkX == temp.getX() && checkY == temp.getY())
 					{
-						room = temp;
+						room = &temp;
 						room->setDoor(door, 2);		
-						//since a room is found, exit the loop
-						it = rooms.end();
+					}
+				}
+
+				for (std::list<ARoom*>::iterator it = done.begin(); it != done.end(); ++it)
+				{
+					//Get current room position
+					int32 checkX = currentRoom->getX();
+					int32 checkY = currentRoom->getY();
+					int32 door;
+
+					//Modify it based off of where current direction checking
+					if (i == 0)
+					{
+						checkY = checkY - 1;
+						door = 2;
+					}
+					else if (i == 1)
+					{
+						checkX = checkX - 1;
+						door = 3;
+					}
+					else if (i == 2)
+					{
+						checkY = checkY + 1;
+						door = 0;
+					}
+					else
+					{
+						checkX = checkX + 1;
+						door = 1;
+					}
+
+					//Check if there is a room
+					ARoom temp = *it;
+					if (checkX == temp.getX() && checkY == temp.getY())
+					{
+						room = &temp;
+						room->setDoor(door, 2);
 					}
 				}
 
@@ -148,42 +190,25 @@ void ALevelGenerator::CreateLevel()
 					{
 						room->setPos(currentRoom->getX(), currentRoom->getY() + 1);
 					}
+					//Add the room to the rooms list
+					rooms.push_back(room);
 				}				
 
 				//Set current door to be connected
 				currentRoom->setDoor(i, 2);				
-				
-				//Decide which room to set to path if current is on the path
-				//Cannot set dead end to path unless min rooms met.
-				//Cannot add to path after max is reached
-				//Cannot pick a room that is already in the path
-				if (currentRoom->getOnPath() && path.size() < maxPath)
-				{
-					if (!(room->getOnPath()))
-					{
-						chance = rand() % 10;
-						//Decreased chance to add to path
-						if (path.size() >= minPath)
-						{							
-							chance = chance + 2;
-						}
-						if (chance < 4)
-						{
-							path.push_back(room);
-							room->setOnPath(true);
-							currentRoom->setOnPath(false);
-						}
-					}
-				}
-				//Add the room to the rooms list
-				rooms.push_back(room);					
 			}
-			//Do nothing if there is no door
+			//clear the room
+			room = nullptr;
 		}
 		//Checked all 4 walls
 
 		//room is done
 		rooms.pop_front();
 		done.push_back(currentRoom);
+
+		if (!rooms.empty())
+		{
+			*currentRoom = rooms.front();
+		}
 	}
 }

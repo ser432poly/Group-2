@@ -5,7 +5,15 @@
 
 
 // Sets default values
-ARoom::ARoom(){}
+ARoom::ARoom()
+{
+	x = 0;
+	y = 0;
+	doors[0] = 0;
+	doors[1] = 0;
+	doors[2] = 0;
+	doors[3] = 0;
+}
 
 void ARoom::setType(int32 roomType)
 {
@@ -91,17 +99,6 @@ void ARoom::setPos(int32 newX, int32 newY)
 int32 ARoom::getY()
 {
 	return y;
-}
-
-bool ARoom::getOnPath()
-{
-	return path;
-}
-
-void ARoom::setOnPath(bool p)
-
-{
-	path = p;
 }
 
 //Rotates the room 90 * rotates
