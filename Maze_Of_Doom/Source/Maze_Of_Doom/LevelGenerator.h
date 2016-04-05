@@ -26,12 +26,12 @@ public:
 
 	//getters
 	UFUNCTION(BlueprintPure, Category = "Room")
-	std::list<ARoom> getDone();
+	TArray<ARoom*> getDone();
 
 	//setters
 	void addDone(ARoom r);
 
 private:
 	int32 level = 1;
-	std::list<ARoom> done;
+	TArray<ARoom*> done;
 };

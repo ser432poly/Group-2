@@ -3,10 +3,6 @@
 #include "Maze_Of_Doom.h"
 #include "LevelGenerator.h"
 #include "Room.h"
-#include <stdlib.h>
-#include <time.h>
-#include <list>
-
 
 
 // Sets default values
@@ -33,10 +29,10 @@ void ALevelGenerator::Tick(float DeltaTime)
 
 void ALevelGenerator::addDone(ARoom r)
 {
-	done.push_back(r);
+	done.Add(r);
 }
 
-std::list<ARoom> ALevelGenerator::getDone()
+TArray<ARoom*> ALevelGenerator::getDone()
 {
 	return done;
 }
@@ -44,9 +40,9 @@ std::list<ARoom> ALevelGenerator::getDone()
 //Generate the Level
 void ALevelGenerator::CreateLevel()
 {
-	std::list<ARoom*> rooms; //Rooms that still need to connect all doors
+	TArray<ARoom*> rooms; //Rooms that still need to connect all doors
 	ARoom* currentRoom; //Room that is being checked
-	ARoom* room = nullptr; //Room that is being added to currentRoom
+	ARoom* room; //Room that is being added to currentRoom
 	int32 minPath = (level / 5) + 2;
 	int32 maxPath = (level / 3) + 4;
 	int32 roomLimit = 3 + level; //How many rooms to generate before all new rooms become deadends
@@ -58,11 +54,11 @@ void ALevelGenerator::CreateLevel()
 	//Create the spawn room and add it to the path
 	currentRoom = ConstructObject<ARoom>(ARoom::StaticClass());
 	currentRoom->setType(roomType);
-	rooms.push_back(currentRoom);
+	rooms.Add(currentRoom);
 	currentRoom->setPos(0, 0);
 
 	//Keep adding rooms until all doors have rooms connected to them
-	while (!rooms.empty())
+	while (rooms.NUM() > 0)
 	{
 		//Rooms are made up of 4 walls
 		for (int32 i = 0; i < 4; i++)
@@ -71,7 +67,7 @@ void ALevelGenerator::CreateLevel()
 			if (currentRoom->getDoor(i) == 1)
 			{
 				//Check if the door isn't connected to a room
-				for (std::list<ARoom*>::iterator it = rooms.begin(); it != rooms.end(); ++it)
+				for (TArray<ARoom*>::iterator it = rooms.begin(); it != rooms.end(); ++it)
 				{
 					//Get current room position
 					int32 checkX = currentRoom->getX();
@@ -109,7 +105,7 @@ void ALevelGenerator::CreateLevel()
 					}
 				}
 
-				for (std::list<ARoom*>::iterator it = done.begin(); it != done.end(); ++it)
+				for (TArray<ARoom*>::iterator it = done.begin(); it != done.end(); ++it)
 				{
 					//Get current room position
 					int32 checkX = currentRoom->getX();
@@ -147,7 +143,7 @@ void ALevelGenerator::CreateLevel()
 					}
 				}
 
-				if (room == nullptr)
+				if (room)
 				{
 					//Create a new Random Room
 					chance = rand() % 100;

@@ -13,7 +13,7 @@ class MAZE_OF_DOOM_API ARoom : public AActor
 public:
 	// Sets default values for this actor's properties
 	ARoom();
-	
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
