@@ -32,7 +32,7 @@ void ALevelGenerator::addDone(ARoom r)
 	done.Add(r);
 }
 
-TArray<ARoom*> ALevelGenerator::getDone()
+TArray<ARoom> ALevelGenerator::getDone()
 {
 	return done;
 }
@@ -40,16 +40,14 @@ TArray<ARoom*> ALevelGenerator::getDone()
 //Generate the Level
 void ALevelGenerator::CreateLevel()
 {
-	TArray<ARoom*> rooms; //Rooms that still need to connect all doors
+	TArray<ARoom> rooms; //Rooms that still need to connect all doors
 	ARoom* currentRoom; //Room that is being checked
 	ARoom* room; //Room that is being added to currentRoom
 	int32 minPath = (level / 5) + 2;
 	int32 maxPath = (level / 3) + 4;
 	int32 roomLimit = 3 + level; //How many rooms to generate before all new rooms become deadends
 	int32 chance;
-
-	srand(time(NULL));
-	int32 roomType = rand() % 5;
+	int32 roomType = FMath::RandRange(0, 4);
 
 	//Create the spawn room and add it to the path
 	currentRoom = ConstructObject<ARoom>(ARoom::StaticClass());
@@ -67,7 +65,7 @@ void ALevelGenerator::CreateLevel()
 			if (currentRoom->getDoor(i) == 1)
 			{
 				//Check if the door isn't connected to a room
-				for (TArray<ARoom*>::iterator it = rooms.begin(); it != rooms.end(); ++it)
+				for (auto it = rooms.CreateIterator(); it; ++it)
 				{
 					//Get current room position
 					int32 checkX = currentRoom->getX();
@@ -105,7 +103,7 @@ void ALevelGenerator::CreateLevel()
 					}
 				}
 
-				for (TArray<ARoom*>::iterator it = done.begin(); it != done.end(); ++it)
+				for (auto it = done.CreateIterator(); it; ++it)
 				{
 					//Get current room position
 					int32 checkX = currentRoom->getX();
@@ -146,17 +144,17 @@ void ALevelGenerator::CreateLevel()
 				if (room)
 				{
 					//Create a new Random Room
-					chance = rand() % 100;
+					chance = FMath::RandRange(1, 100);
 					chance = chance - level;
 					//Only make dead ends once room limit is reached
 					//Once room limit reach make all remaining doors dead ends
-					if (((int32) done.size()) >= roomLimit)
+					if (((int32) done.NUM()) >= roomLimit)
 					{
 						roomType = 0;
 					}
 					else
 					{
-						roomType = rand() % 5;
+						roomType = FMath::RandRange(0, 4);
 					}
 
 					//Create the room from the room type
@@ -187,24 +185,24 @@ void ALevelGenerator::CreateLevel()
 						room->setPos(currentRoom->getX(), currentRoom->getY() + 1);
 					}
 					//Add the room to the rooms list
-					rooms.push_back(room);
+					rooms.Add(room);
 				}				
 
 				//Set current door to be connected
 				currentRoom->setDoor(i, 2);				
 			}
 			//clear the room
-			room = nullptr;
+			room = 0;
 		}
 		//Checked all 4 walls
 
 		//room is done
-		rooms.pop_front();
-		done.push_back(currentRoom);
+		rooms.RemoveAt(0);
+		done.Add(currentRoom);
 
-		if (!rooms.empty())
+		if (rooms.NUM() > 0)
 		{
-			*currentRoom = rooms.front();
+			*currentRoom = rooms.RemoveAt(0);
 		}
 	}
 }
