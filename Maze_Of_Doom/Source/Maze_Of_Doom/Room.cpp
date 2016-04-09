@@ -17,45 +17,11 @@ ARoom::ARoom()
 
 void ARoom::setType(int32 roomType)
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+}
 
-	//PrimaryActorTick.bCanEverTick = true;	
-
-	if (roomType == 0) //DeadEnd Room
-	{
-		doors[0] = 1;
-		doors[1] = 0;
-		doors[2] = 0;
-		doors[3] = 0;
-	}
-	else if (roomType == 1) //Across Room
-	{
-		doors[0] = 1;
-		doors[1] = 0;
-		doors[2] = 1;
-		doors[3] = 0;
-	}
-	else if (roomType == 2) //2 Door Room
-	{
-		doors[0] = 1;
-		doors[1] = 0;
-		doors[2] = 0;
-		doors[3] = 1;
-	}
-	else if (roomType == 3)//3 Door Room
-	{
-		doors[0] = 1;
-		doors[1] = 1;
-		doors[2] = 0;
-		doors[3] = 1;
-	}
-	else//4 Door Room
-	{
-		doors[0] = 1;
-		doors[1] = 1;
-		doors[2] = 1;
-		doors[3] = 1;
-	}
+int32 ARoom::getType()
+{
+	return type;
 
 }
 

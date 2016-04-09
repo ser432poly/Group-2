@@ -46,6 +46,10 @@ public:
 	//Setter
 	void setType(int32 roomType);
 
+	//Getter
+	UFUNCTION(BlueprintPure, Category = "Room")
+		int32 getType();
+
 
 private:
 	//Index determines which wall, 0 = down, 1 = left, 2 = up, 3 = right
@@ -55,4 +59,6 @@ private:
 	//Position of Room from spawn room
 	int32 x;
 	int32 y;
+
+	int32 type;
 };

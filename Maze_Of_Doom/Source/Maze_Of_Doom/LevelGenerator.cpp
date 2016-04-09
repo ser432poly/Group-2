@@ -3,6 +3,7 @@
 #include "Maze_Of_Doom.h"
 #include "LevelGenerator.h"
 #include "Room.h"
+#include "Kismet/KismetMathLibrary.h"
 
 
 // Sets default values
@@ -27,12 +28,12 @@ void ALevelGenerator::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-void ALevelGenerator::addDone(ARoom r)
+void ALevelGenerator::addDone(ARoom* r)
 {
 	done.Add(r);
 }
 
-TArray<ARoom> ALevelGenerator::getDone()
+TArray<ARoom*> ALevelGenerator::getDone()
 {
 	return done;
 }
@@ -40,24 +41,27 @@ TArray<ARoom> ALevelGenerator::getDone()
 //Generate the Level
 void ALevelGenerator::CreateLevel()
 {
-	TArray<ARoom> rooms; //Rooms that still need to connect all doors
+	TArray<ARoom*> rooms; //Rooms that still need to connect all doors
 	ARoom* currentRoom; //Room that is being checked
-	ARoom* room; //Room that is being added to currentRoom
+	ARoom* room = 0; //Room that is being added to currentRoom
 	int32 minPath = (level / 5) + 2;
 	int32 maxPath = (level / 3) + 4;
 	int32 roomLimit = 3 + level; //How many rooms to generate before all new rooms become deadends
 	int32 chance;
 	int32 roomType = FMath::RandRange(0, 4);
 
+	UWorld* const World = GetWorld();
+
 	//Create the spawn room and add it to the path
-	currentRoom = ConstructObject<ARoom>(ARoom::StaticClass());
+	currentRoom = World->SpawnActor<ARoom>();
 	currentRoom->setType(roomType);
 	rooms.Add(currentRoom);
 	currentRoom->setPos(0, 0);
-
+	UE_LOG(LogClass, Log, TEXT("%d"), rooms.Num());
 	//Keep adding rooms until all doors have rooms connected to them
-	while (rooms.NUM() > 0)
+	while (rooms.Num() > 0)
 	{
+		UE_LOG(LogClass, Log, TEXT("loop"));
 		//Rooms are made up of 4 walls
 		for (int32 i = 0; i < 4; i++)
 		{
@@ -95,11 +99,11 @@ void ALevelGenerator::CreateLevel()
 					}
 
 					//Check if there is a room
-					ARoom temp = *it;
-					if (checkX == temp.getX() && checkY == temp.getY())
+					ARoom* temp = *it;
+					if (checkX == temp->getX() && checkY == temp->getY())
 					{
-						room = &temp;
-						room->setDoor(door, 2);		
+						room = temp;
+						room->setDoor(door, 2);
 					}
 				}
 
@@ -133,22 +137,22 @@ void ALevelGenerator::CreateLevel()
 					}
 
 					//Check if there is a room
-					ARoom temp = *it;
-					if (checkX == temp.getX() && checkY == temp.getY())
+					ARoom* temp = *it;
+					if (checkX == temp->getX() && checkY == temp->getY())
 					{
-						room = &temp;
+						room = temp;
 						room->setDoor(door, 2);
 					}
 				}
 
-				if (room)
+				if (!room)
 				{
 					//Create a new Random Room
 					chance = FMath::RandRange(1, 100);
 					chance = chance - level;
 					//Only make dead ends once room limit is reached
 					//Once room limit reach make all remaining doors dead ends
-					if (((int32) done.NUM()) >= roomLimit)
+					if (((int32)done.Num()) >= roomLimit)
 					{
 						roomType = 0;
 					}
@@ -158,7 +162,7 @@ void ALevelGenerator::CreateLevel()
 					}
 
 					//Create the room from the room type
-					room = ConstructObject<ARoom>(ARoom::StaticClass());
+					room = World->SpawnActor<ARoom>();
 					room->setType(roomType);
 
 					//Always connect from door 0 so set door 0 to connected
@@ -186,10 +190,10 @@ void ALevelGenerator::CreateLevel()
 					}
 					//Add the room to the rooms list
 					rooms.Add(room);
-				}				
+				}
 
 				//Set current door to be connected
-				currentRoom->setDoor(i, 2);				
+				currentRoom->setDoor(i, 2);
 			}
 			//clear the room
 			room = 0;
@@ -197,12 +201,15 @@ void ALevelGenerator::CreateLevel()
 		//Checked all 4 walls
 
 		//room is done
+		UE_LOG(LogClass, Log, TEXT("%d"), rooms.Num());
 		rooms.RemoveAt(0);
-		done.Add(currentRoom);
+		UE_LOG(LogClass, Log, TEXT("%d"), rooms.Num());
+		addDone(currentRoom);
 
-		if (rooms.NUM() > 0)
+		if (rooms.Num() > 0)
 		{
-			*currentRoom = rooms.RemoveAt(0);
+			currentRoom = rooms[0];
+
 		}
 	}
 }
