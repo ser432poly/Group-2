@@ -44,29 +44,49 @@ void ALevelGenerator::CreateLevel()
 	TArray<ARoom*> rooms; //Rooms that still need to connect all doors
 	ARoom* currentRoom; //Room that is being checked
 	ARoom* room = 0; //Room that is being added to currentRoom
-	int32 minPath = (level / 5) + 2;
-	int32 maxPath = (level / 3) + 4;
-	int32 roomLimit = 3 + level; //How many rooms to generate before all new rooms become deadends
+	int32 roomLimit = 5 + level; //How many rooms to generate before all new rooms become deadends
 	int32 chance;
-	int32 roomType = FMath::RandRange(0, 4);
-
 	UWorld* const World = GetWorld();
 
 	//Create the spawn room and add it to the path
 	currentRoom = World->SpawnActor<ARoom>();
-	currentRoom->setType(roomType);
+	chance = FMath::RandRange(1, 5);
+	//close some doors
+	if (chance == 1) //4door
+	{
+	}
+	else if (chance == 2) // 3door
+	{
+		currentRoom->setDoor(2, 0);
+	}
+	else if (chance == 3) // 2door
+	{
+		currentRoom->setDoor(1, 0);
+		currentRoom->setDoor(2, 0);
+	}
+	else if (chance == 4) // across
+	{
+		currentRoom->setDoor(1, 0);
+		currentRoom->setDoor(3, 0);
+	}
+	else //deadend
+	{
+		currentRoom->setDoor(1, 0);
+		currentRoom->setDoor(2, 0);
+		currentRoom->setDoor(3, 0);
+	}
+
 	rooms.Add(currentRoom);
 	currentRoom->setPos(0, 0);
-	UE_LOG(LogClass, Log, TEXT("%d"), rooms.Num());
+
 	//Keep adding rooms until all doors have rooms connected to them
 	while (rooms.Num() > 0)
 	{
-		UE_LOG(LogClass, Log, TEXT("loop"));
 		//Rooms are made up of 4 walls
 		for (int32 i = 0; i < 4; i++)
 		{
-			//Check if the current door is not already connected to a room
-			if (currentRoom->getDoor(i) == 1)
+			//Check if the current door is not a wall
+			if (currentRoom->getDoor(i) != 0)
 			{
 				//Check if the door isn't connected to a room
 				for (auto it = rooms.CreateIterator(); it; ++it)
@@ -102,8 +122,8 @@ void ALevelGenerator::CreateLevel()
 					ARoom* temp = *it;
 					if (checkX == temp->getX() && checkY == temp->getY())
 					{
+						currentRoom->setDoor(i, temp->getDoor(door));
 						room = temp;
-						room->setDoor(door, 2);
 					}
 				}
 
@@ -140,8 +160,8 @@ void ALevelGenerator::CreateLevel()
 					ARoom* temp = *it;
 					if (checkX == temp->getX() && checkY == temp->getY())
 					{
+						currentRoom->setDoor(i, temp->getDoor(door));
 						room = temp;
-						room->setDoor(door, 2);
 					}
 				}
 
@@ -150,38 +170,98 @@ void ALevelGenerator::CreateLevel()
 					//Create a new Random Room
 					chance = FMath::RandRange(1, 100);
 					chance = chance - level;
+
+					//Create the room from the room type
+					room = World->SpawnActor<ARoom>();
+
 					//Only make dead ends once room limit is reached
 					//Once room limit reach make all remaining doors dead ends
 					if (((int32)done.Num()) >= roomLimit)
 					{
-						roomType = 0;
+						if (i == 0)
+						{
+							room->setDoor(0, 0);
+							room->setDoor(1, 0);
+							room->setDoor(2, 1);
+							room->setDoor(3, 0);
+						}
+						else if (i == 1)
+						{
+							room->setDoor(0, 0);
+							room->setDoor(1, 0);
+							room->setDoor(2, 0);
+							room->setDoor(3, 1);
+						}
+						else if (i == 2)
+						{
+							room->setDoor(0, 1);
+							room->setDoor(1, 0);
+							room->setDoor(2, 0);
+							room->setDoor(3, 0);
+						}
+						else
+						{
+							room->setDoor(0, 0);
+							room->setDoor(1, 1);
+							room->setDoor(2, 0);
+							room->setDoor(3, 0);
+						}
 					}
-					else
+					else //make a room that is not a dead end
 					{
-						roomType = FMath::RandRange(0, 4);
+						if (i == 0)
+						{
+							for (int32 i = 0; i < 4; i++)
+							{
+								chance = FMath::RandRange(0, 1);
+								room->setDoor(i, chance);
+							}		
+							//make sure right door is available
+							room->setDoor(2, 1);
+						}
+						else if (i == 1)
+						{
+							for (int32 i = 0; i < 4; i++)
+							{
+								chance = FMath::RandRange(0, 1);
+								room->setDoor(i, chance);
+							}
+							//make sure right door is available
+							room->setDoor(3, 1);
+						}
+						else if (i == 2)
+						{
+							for (int32 i = 0; i < 4; i++)
+							{
+								chance = FMath::RandRange(0, 1);
+								room->setDoor(i, chance);
+							}
+							//make sure right door is available
+							room->setDoor(0, 1);
+						}
+						else
+						{
+							for (int32 i = 0; i < 4; i++)
+							{
+								chance = FMath::RandRange(0, 1);
+								room->setDoor(i, chance);
+							}
+							//make sure right door is available
+							room->setDoor(1, 1);
+						}
 					}
 
-					//Create the room from the room type
-					room = World->SpawnActor<ARoom>();
-					room->setType(roomType);
-
-					//Always connect from door 0 so set door 0 to connected
-					room->setDoor(0, 2);
-
-					//Rotate room to connect doors correctly
+					//set position of room
 					if (i == 0) //Room goes below current room
 					{
-						room->RotateRoom(2);
 						room->setPos(currentRoom->getX(), currentRoom->getY() - 1);
 					}
 					else if (i == 1) //Room goes to left of current room
 					{
-						room->RotateRoom(3);
 						room->setPos(currentRoom->getX() - 1, currentRoom->getY());
 					}
 					else if (i == 3) //Room goes to the right of current room
 					{
-						room->RotateRoom(3);
 						room->setPos(currentRoom->getX() + 1, currentRoom->getY());
 					}
 					else //Room goes above current room
@@ -191,9 +271,6 @@ void ALevelGenerator::CreateLevel()
 					//Add the room to the rooms list
 					rooms.Add(room);
 				}
-
-				//Set current door to be connected
-				currentRoom->setDoor(i, 2);
 			}
 			//clear the room
 			room = 0;
@@ -201,15 +278,16 @@ void ALevelGenerator::CreateLevel()
 		//Checked all 4 walls
 
 		//room is done
-		UE_LOG(LogClass, Log, TEXT("%d"), rooms.Num());
 		rooms.RemoveAt(0);
-		UE_LOG(LogClass, Log, TEXT("%d"), rooms.Num());
+		currentRoom->determineRoom();
 		addDone(currentRoom);
+		UE_LOG(LogClass, Log, TEXT("Type: %d"), currentRoom->getType());
+		UE_LOG(LogClass, Log, TEXT("X: %d"), currentRoom->getX());
+		UE_LOG(LogClass, Log, TEXT("Y: %d"), currentRoom->getY());
 
 		if (rooms.Num() > 0)
 		{
 			currentRoom = rooms[0];
-
 		}
 	}
 }
