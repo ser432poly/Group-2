@@ -44,7 +44,7 @@ void ALevelGenerator::CreateLevel()
 	TArray<ARoom*> rooms; //Rooms that still need to connect all doors
 	ARoom* currentRoom; //Room that is being checked
 	ARoom* room = 0; //Room that is being added to currentRoom
-	int32 roomLimit = 5 + level; //How many rooms to generate before all new rooms become deadends
+	int32 roomLimit = 2 + level; //How many rooms to generate before all new rooms become deadends
 	int32 chance;
 	UWorld* const World = GetWorld();
 
@@ -282,6 +282,7 @@ void ALevelGenerator::CreateLevel()
 		currentRoom->determineRoom();
 		addDone(currentRoom);
 		UE_LOG(LogClass, Log, TEXT("Type: %d"), currentRoom->getType());
+		UE_LOG(LogClass, Log, TEXT("Rot: %d"), currentRoom->getRotation());
 		UE_LOG(LogClass, Log, TEXT("X: %d"), currentRoom->getX());
 		UE_LOG(LogClass, Log, TEXT("Y: %d"), currentRoom->getY());
 

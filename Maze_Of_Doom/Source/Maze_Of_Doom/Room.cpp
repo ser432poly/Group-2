@@ -40,27 +40,38 @@ void ARoom::determineRoom()
 	//determine type and rotation
 
 	type = rand; //deadend
-	if (count == 2) //2door
+	if (count == 1)
+	{
+		if (rotation == 0)
+		{
+			rotation = 2;
+		}
+		else if (rotation == 2)
+		{
+			rotation = 0;
+		}
+	}
+	else if (count == 2) //2door
 	{
 		if (doors[0] == doors[3] && doors[0] != 0)
 		{
 			type += 6;
-			rotation = 0;
+			rotation = 3;
 		}
 		else if (doors[1] == doors[0] && doors[1] != 0)
 		{
 			type += 6;
-			rotation = 1;
+			rotation = 2;
 		}
 		else if (doors[2] == doors[1] && doors[2] != 0)
 		{
 			type += 6;
-			rotation = 2;
+			rotation = 1;
 		}
 		else if (doors[3] == doors[2] && doors[3] != 0)
 		{
 			type += 6;
-			rotation = 3;
+			rotation = 0;
 		}
 		//across
 		else if  (doors[0] == doors[2] && doors[0] != 0)
@@ -80,7 +91,7 @@ void ARoom::determineRoom()
 		if (doors[0] == doors[3] && doors[2] == 0)
 		{
 			type += 9;
-			rotation = 0;
+			rotation = 2;
 		}
 		else if (doors[1] == doors[0] && doors[3] == 0)
 		{
@@ -90,7 +101,7 @@ void ARoom::determineRoom()
 		else if (doors[2] == doors[1] && doors[0] == 0)
 		{
 			type += 9;
-			rotation = 2;
+			rotation = 0;
 		}
 		else
 		{
