@@ -28,6 +28,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Room")
 		void setDoor(int32 door, int32 newValue);
 
+	//setter
+	void setEndRoom();
+
 	//Getter
 	UFUNCTION(BlueprintPure, Category = "Room")
 		int32 getX();
@@ -48,6 +51,10 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Room")
 		int32 getRotation();
 
+	//Getter
+	UFUNCTION(BlueprintPure, Category = "Room")
+		bool isEndRoom();
+
 	void determineRoom();
 
 
@@ -61,13 +68,15 @@ private:
 	int32 y;
 
 	//Type of room 3 nums for each room type
-	//0-2 deadends
-	//3-5 across
-	//6-8 2door
-	//9-11 3door
-	//12-14 4door
+	//0-4 deadends
+	//5-9 across
+	//10-14 2door
+	//15-19 3door
+	//20-24 4door
 	int32 type;
 
 	//how much to rotate the room
 	int32 rotation;
+
+	bool endRoom;
 };

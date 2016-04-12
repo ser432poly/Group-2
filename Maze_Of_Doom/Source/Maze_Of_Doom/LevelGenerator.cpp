@@ -290,5 +290,9 @@ void ALevelGenerator::CreateLevel()
 		{
 			currentRoom = rooms[0];
 		}
+		else
+		{
+			currentRoom->setEndRoom();
+		}
 	}
 }
