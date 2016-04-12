@@ -9,54 +9,111 @@ ARoom::ARoom()
 {
 	x = 0;
 	y = 0;
-	doors[0] = 0;
-	doors[1] = 0;
-	doors[2] = 0;
-	doors[3] = 0;
+	doors[0] = 1;
+	doors[1] = 1;
+	doors[2] = 1;
+	doors[3] = 1;
+	type = 0;
+	endRoom = false;
 }
 
-void ARoom::setType(int32 roomType)
+int32 ARoom::getType()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	return type;
 
-	//PrimaryActorTick.bCanEverTick = true;	
+}
 
-	if (roomType == 0) //DeadEnd Room
+void ARoom::determineRoom()
+{
+	int32 count = 0;
+	int32 rand = FMath::RandRange(0, 4);
+
+	//count the doors
+	for (int32 i = 0; i < 4; i++)
 	{
-		doors[0] = 1;
-		doors[1] = 0;
-		doors[2] = 0;
-		doors[3] = 0;
-	}
-	else if (roomType == 1) //Across Room
-	{
-		doors[0] = 1;
-		doors[1] = 0;
-		doors[2] = 1;
-		doors[3] = 0;
-	}
-	else if (roomType == 2) //2 Door Room
-	{
-		doors[0] = 1;
-		doors[1] = 0;
-		doors[2] = 0;
-		doors[3] = 1;
-	}
-	else if (roomType == 3)//3 Door Room
-	{
-		doors[0] = 1;
-		doors[1] = 1;
-		doors[2] = 0;
-		doors[3] = 1;
-	}
-	else//4 Door Room
-	{
-		doors[0] = 1;
-		doors[1] = 1;
-		doors[2] = 1;
-		doors[3] = 1;
+		if (doors[i] != 0)
+		{
+			count += 1;
+			rotation = i; //For deadend only and 4door
+		}		
 	}
 
+	//determine type and rotation
+
+	type = rand; //deadend
+	if (count == 1)
+	{
+		if (rotation == 0)
+		{
+			rotation = 2;
+		}
+		else if (rotation == 2)
+		{
+			rotation = 0;
+		}
+	}
+	else if (count == 2) //2door
+	{
+		if (doors[0] == doors[3] && doors[0] != 0)
+		{
+			type += 10;
+			rotation = 3;
+		}
+		else if (doors[1] == doors[0] && doors[1] != 0)
+		{
+			type += 10;
+			rotation = 2;
+		}
+		else if (doors[2] == doors[1] && doors[2] != 0)
+		{
+			type += 10;
+			rotation = 1;
+		}
+		else if (doors[3] == doors[2] && doors[3] != 0)
+		{
+			type += 10;
+			rotation = 0;
+		}
+		//across
+		else if  (doors[0] == doors[2] && doors[0] != 0)
+		{
+			type += 5;
+			rotation = 0;
+		}
+		else
+		{
+			type += 5;
+			rotation = 1;
+		}
+		
+	}
+	else if (count == 3) //3door
+	{
+		if (doors[0] == doors[3] && doors[2] == 0)
+		{
+			type += 15;
+			rotation = 2;
+		}
+		else if (doors[1] == doors[0] && doors[3] == 0)
+		{
+			type += 15;
+			rotation = 1;
+		}
+		else if (doors[2] == doors[1] && doors[0] == 0)
+		{
+			type += 15;
+			rotation = 0;
+		}
+		else
+		{
+			type += 15;
+			rotation = 3;
+		}
+	}
+	else if (count == 4)//4door
+	{
+		type += 20;
+	}	
 }
 
 // Called when the game starts or when spawned
@@ -101,15 +158,17 @@ int32 ARoom::getY()
 	return y;
 }
 
-//Rotates the room 90 * rotates
-void ARoom::RotateRoom(int32 rotates)
+int32 ARoom::getRotation()
 {
-	for (int32 i = 0; i < rotates; i++)
-	{
-		int32 temp = doors[0];
-		doors[0] = doors[1];
-		doors[1] = doors[2];
-		doors[2] = doors[3];
-		doors[3] = temp;
-	}
+	return rotation;
+}
+
+bool ARoom::isEndRoom()
+{
+	return endRoom;
+}
+
+void ARoom::setEndRoom()
+{
+	endRoom = true;
 }

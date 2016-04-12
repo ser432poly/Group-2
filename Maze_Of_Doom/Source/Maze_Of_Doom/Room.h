@@ -19,10 +19,7 @@ public:
 
 	// Called every frame
 	virtual void Tick(float DeltaSeconds) override;
-
-	UFUNCTION(BlueprintCallable, Category = "Room")
-		void RotateRoom(int32 Rotates);
-
+	
 	//Getter
 	UFUNCTION(BlueprintPure, Category = "Room")
 		int32 getDoor(int32 door);
@@ -30,6 +27,9 @@ public:
 	//Setter
 	UFUNCTION(BlueprintCallable, Category = "Room")
 		void setDoor(int32 door, int32 newValue);
+
+	//setter
+	void setEndRoom();
 
 	//Getter
 	UFUNCTION(BlueprintPure, Category = "Room")
@@ -42,9 +42,20 @@ public:
 	//Getter
 	UFUNCTION(BlueprintPure, Category = "Room")
 		int32 getY();
+	
+	//Getter
+	UFUNCTION(BlueprintPure, Category = "Room")
+		int32 getType();
 
-	//Setter
-	void setType(int32 roomType);
+	//Getter
+	UFUNCTION(BlueprintPure, Category = "Room")
+		int32 getRotation();
+
+	//Getter
+	UFUNCTION(BlueprintPure, Category = "Room")
+		bool isEndRoom();
+
+	void determineRoom();
 
 
 private:
@@ -55,4 +66,17 @@ private:
 	//Position of Room from spawn room
 	int32 x;
 	int32 y;
+
+	//Type of room 3 nums for each room type
+	//0-4 deadends
+	//5-9 across
+	//10-14 2door
+	//15-19 3door
+	//20-24 4door
+	int32 type;
+
+	//how much to rotate the room
+	int32 rotation;
+
+	bool endRoom;
 };
