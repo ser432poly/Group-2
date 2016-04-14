@@ -15,6 +15,7 @@ ARoom::ARoom()
 	doors[3] = 1;
 	type = 0;
 	endRoom = false;
+	powerUp = false;
 }
 
 int32 ARoom::getType()
@@ -171,4 +172,14 @@ bool ARoom::isEndRoom()
 void ARoom::setEndRoom()
 {
 	endRoom = true;
+}
+
+bool ARoom::hasPowerUp()
+{
+	return powerUp;
+}
+
+void ARoom::setPowerUp()
+{
+	powerUp = true;
 }

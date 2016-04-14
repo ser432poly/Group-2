@@ -31,6 +31,9 @@ public:
 	//setter
 	void setEndRoom();
 
+	//setter
+	void setPowerUp();
+
 	//Getter
 	UFUNCTION(BlueprintPure, Category = "Room")
 		int32 getX();
@@ -55,6 +58,10 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Room")
 		bool isEndRoom();
 
+	//Getter
+	UFUNCTION(BlueprintPure, Category = "Room")
+		bool hasPowerUp();
+
 	void determineRoom();
 
 
@@ -78,5 +85,9 @@ private:
 	//how much to rotate the room
 	int32 rotation;
 
+	//determine if the room should have a power up
+	bool powerUp;
+
+	//determine if the room has the end stairs
 	bool endRoom;
 };

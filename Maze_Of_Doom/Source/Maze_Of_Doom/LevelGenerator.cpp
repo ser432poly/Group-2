@@ -46,6 +46,8 @@ void ALevelGenerator::CreateLevel()
 	ARoom* room = 0; //Room that is being added to currentRoom
 	int32 roomLimit = 2 + level; //How many rooms to generate before all new rooms become deadends
 	int32 chance;
+	//how many power ups to spawn
+	int32 powerUps = level + 1;
 	UWorld* const World = GetWorld();
 
 	//Create the spawn room and add it to the path
@@ -205,6 +207,12 @@ void ALevelGenerator::CreateLevel()
 							room->setDoor(1, 1);
 							room->setDoor(2, 0);
 							room->setDoor(3, 0);
+						}
+						if (powerUps > 0)
+						{
+							room->setPowerUp();
+							powerUps -= 1;
+							UE_LOG(LogClass, Log, TEXT("Power Up1: %d"), currentRoom->getType());
 						}
 					}
 					else //make a room that is not a dead end
