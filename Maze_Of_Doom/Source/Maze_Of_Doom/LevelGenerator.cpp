@@ -18,7 +18,6 @@ ALevelGenerator::ALevelGenerator()
 void ALevelGenerator::BeginPlay()
 {
 	Super::BeginPlay();
-	level = 1;
 
 }
 
@@ -39,7 +38,7 @@ TArray<ARoom*> ALevelGenerator::getDone()
 }
 
 //Generate the Level
-void ALevelGenerator::CreateLevel()
+void ALevelGenerator::CreateLevel(int32 level)
 {
 	TArray<ARoom*> rooms; //Rooms that still need to connect all doors
 	ARoom* currentRoom; //Room that is being checked
@@ -49,6 +48,8 @@ void ALevelGenerator::CreateLevel()
 	//how many power ups to spawn
 	int32 powerUps = level + 1;
 	UWorld* const World = GetWorld();
+
+	UE_LOG(LogClass, Log, TEXT("Level: %d"), level);
 
 	//Create the spawn room and add it to the path
 	currentRoom = World->SpawnActor<ARoom>();

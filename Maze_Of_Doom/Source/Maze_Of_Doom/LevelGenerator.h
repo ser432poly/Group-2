@@ -22,7 +22,7 @@ public:
 
 	//Generate the level
 	UFUNCTION(BlueprintCallable, Category = "Room")
-		void CreateLevel();
+		void CreateLevel(int32 level);
 
 	//getters
 	UFUNCTION(BlueprintPure, Category = "Room")
@@ -32,6 +32,5 @@ public:
 	void addDone(ARoom* r);
 
 private:
-	int32 level = 1;
 	TArray<ARoom*> done;
 };
