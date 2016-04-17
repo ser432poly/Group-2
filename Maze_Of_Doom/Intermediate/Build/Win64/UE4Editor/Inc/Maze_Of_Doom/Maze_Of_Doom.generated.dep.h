@@ -5,6 +5,9 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
+#ifndef MAZE_OF_DOOM_LevelGenerator_generated_h
+	#include "LevelGenerator.h"
+#endif
 #ifndef MAZE_OF_DOOM_Maze_Of_DoomCharacter_generated_h
 	#include "Maze_Of_DoomCharacter.h"
 #endif
@@ -13,4 +16,10 @@
 #endif
 #ifndef MAZE_OF_DOOM_Pickup_generated_h
 	#include "Pickup.h"
+#endif
+#ifndef MAZE_OF_DOOM_EnergyPickup_generated_h
+	#include "EnergyPickup.h"
+#endif
+#ifndef MAZE_OF_DOOM_Room_generated_h
+	#include "Room.h"
 #endif
