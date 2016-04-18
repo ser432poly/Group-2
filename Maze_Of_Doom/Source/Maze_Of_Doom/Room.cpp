@@ -183,3 +183,14 @@ void ARoom::setPowerUp()
 {
 	powerUp = true;
 }
+
+bool ARoom::hasEnemy()
+{
+	return enemy;
+}
+
+void ARoom::setEnemy()
+{
+	enemy = true;
+}
+

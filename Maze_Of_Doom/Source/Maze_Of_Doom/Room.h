@@ -34,6 +34,9 @@ public:
 	//setter
 	void setPowerUp();
 
+	//setter
+	void setEnemy();
+
 	//Getter
 	UFUNCTION(BlueprintPure, Category = "Room")
 		int32 getX();
@@ -61,6 +64,10 @@ public:
 	//Getter
 	UFUNCTION(BlueprintPure, Category = "Room")
 		bool hasPowerUp();
+
+	//Getter
+	UFUNCTION(BlueprintPure, Category = "Room")
+		bool hasEnemy();
 
 	void determineRoom();
 
@@ -90,4 +97,6 @@ private:
 
 	//determine if the room has the end stairs
 	bool endRoom;
+
+	bool enemy;
 };
