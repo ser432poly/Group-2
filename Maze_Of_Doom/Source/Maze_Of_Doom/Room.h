@@ -31,6 +31,12 @@ public:
 	//setter
 	void setEndRoom();
 
+	//setter
+	void setPowerUp();
+
+	//setter
+	void setEnemy();
+
 	//Getter
 	UFUNCTION(BlueprintPure, Category = "Room")
 		int32 getX();
@@ -55,6 +61,14 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Room")
 		bool isEndRoom();
 
+	//Getter
+	UFUNCTION(BlueprintPure, Category = "Room")
+		bool hasPowerUp();
+
+	//Getter
+	UFUNCTION(BlueprintPure, Category = "Room")
+		bool hasEnemy();
+
 	void determineRoom();
 
 
@@ -68,15 +82,21 @@ private:
 	int32 y;
 
 	//Type of room 3 nums for each room type
-	//0-4 deadends
-	//5-9 across
-	//10-14 2door
-	//15-19 3door
-	//20-24 4door
+	//0-7 deadends
+	//8-15 across
+	//16-23 2door
+	//24-31 3door
+	//32-39 4door
 	int32 type;
 
 	//how much to rotate the room
 	int32 rotation;
 
+	//determine if the room should have a power up
+	bool powerUp;
+
+	//determine if the room has the end stairs
 	bool endRoom;
+
+	bool enemy;
 };

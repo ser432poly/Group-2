@@ -18,7 +18,6 @@ ALevelGenerator::ALevelGenerator()
 void ALevelGenerator::BeginPlay()
 {
 	Super::BeginPlay();
-	level = 1;
 
 }
 
@@ -39,14 +38,20 @@ TArray<ARoom*> ALevelGenerator::getDone()
 }
 
 //Generate the Level
-void ALevelGenerator::CreateLevel()
+void ALevelGenerator::CreateLevel(int32 level)
 {
 	TArray<ARoom*> rooms; //Rooms that still need to connect all doors
 	ARoom* currentRoom; //Room that is being checked
 	ARoom* room = 0; //Room that is being added to currentRoom
-	int32 roomLimit = 2 + level; //How many rooms to generate before all new rooms become deadends
+	int32 roomLimit = 2 + level/4; //How many rooms to generate before all new rooms become deadends, 1 extra room every 4 levels
 	int32 chance;
+	//how many power ups to spawn
+	int32 powerUps = level/5 + 1; //1 extra power up every 5 levels
+	//how many enemies to spawn
+	int32 enemies = level / 3 + 2; //1 extra enemy for every 3 levels
 	UWorld* const World = GetWorld();
+
+	UE_LOG(LogClass, Log, TEXT("Level: %d"), level);
 
 	//Create the spawn room and add it to the path
 	currentRoom = World->SpawnActor<ARoom>();
@@ -168,9 +173,6 @@ void ALevelGenerator::CreateLevel()
 				if (!room)
 				{
 					//Create a new Random Room
-					chance = FMath::RandRange(1, 100);
-					chance = chance - level;
-
 					//Create the room from the room type
 					room = World->SpawnActor<ARoom>();
 
@@ -205,6 +207,12 @@ void ALevelGenerator::CreateLevel()
 							room->setDoor(1, 1);
 							room->setDoor(2, 0);
 							room->setDoor(3, 0);
+						}
+						if (powerUps > 0)
+						{
+							room->setPowerUp();
+							powerUps -= 1;
+							UE_LOG(LogClass, Log, TEXT("Power Up1: %d"), currentRoom->getType());
 						}
 					}
 					else //make a room that is not a dead end
@@ -269,6 +277,15 @@ void ALevelGenerator::CreateLevel()
 						room->setPos(currentRoom->getX(), currentRoom->getY() + 1);
 					}
 					//Add the room to the rooms list
+
+					chance = FMath::RandRange(0, 1);
+					if (enemies > 0 && chance == 1)
+					{
+						room->setEnemy();
+						enemies -= 1;
+						UE_LOG(LogClass, Log, TEXT("Enemy: %d"), currentRoom->getType());
+					}
+
 					rooms.Add(room);
 				}
 			}
