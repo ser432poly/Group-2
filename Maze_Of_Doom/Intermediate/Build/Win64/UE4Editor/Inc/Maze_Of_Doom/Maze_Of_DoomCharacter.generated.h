@@ -13,8 +13,24 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define MAZE_OF_DOOM_Maze_Of_DoomCharacter_generated_h
 
-#define Maze_Of_Doom_Source_Maze_Of_Doom_Maze_Of_DoomCharacter_h_9_RPC_WRAPPERS
-#define Maze_Of_Doom_Source_Maze_Of_Doom_Maze_Of_DoomCharacter_h_9_RPC_WRAPPERS_NO_PURE_DECLS
+#define Maze_Of_Doom_Source_Maze_Of_Doom_Maze_Of_DoomCharacter_h_9_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execCollectPickups) \
+	{ \
+		P_FINISH; \
+		this->CollectPickups(); \
+	}
+
+
+#define Maze_Of_Doom_Source_Maze_Of_Doom_Maze_Of_DoomCharacter_h_9_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execCollectPickups) \
+	{ \
+		P_FINISH; \
+		this->CollectPickups(); \
+	}
+
+
 #define Maze_Of_Doom_Source_Maze_Of_Doom_Maze_Of_DoomCharacter_h_9_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesAMaze_Of_DoomCharacter(); \

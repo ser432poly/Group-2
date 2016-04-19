@@ -14,6 +14,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define MAZE_OF_DOOM_Pickup_generated_h
 
 #define Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_RPC_WRAPPERS \
+	virtual void WasCollected_Implementation(); \
+ \
+	DECLARE_FUNCTION(execWasCollected) \
+	{ \
+		P_FINISH; \
+		this->WasCollected_Implementation(); \
+	} \
  \
 	DECLARE_FUNCTION(execSetActive) \
 	{ \
@@ -31,6 +38,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execWasCollected) \
+	{ \
+		P_FINISH; \
+		this->WasCollected_Implementation(); \
+	} \
+ \
 	DECLARE_FUNCTION(execSetActive) \
 	{ \
 		P_GET_UBOOL(Z_Param_NewPickupState); \
@@ -45,6 +58,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	}
 
 
+#define Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_EVENT_PARMS
+extern MAZE_OF_DOOM_API  FName MAZE_OF_DOOM_WasCollected;
+#define Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_CALLBACK_WRAPPERS
 #define Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesAPickup(); \
@@ -89,11 +105,15 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APickup); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(APickup)
 
 
-#define Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_8_PROLOG
+#define Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_8_PROLOG \
+	Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_EVENT_PARMS
+
+
 #define Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_RPC_WRAPPERS \
+	Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_CALLBACK_WRAPPERS \
 	Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_INCLASS \
 	Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_STANDARD_CONSTRUCTORS \
 public: \
@@ -104,6 +124,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_CALLBACK_WRAPPERS \
 	Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_INCLASS_NO_PURE_DECLS \
 	Maze_Of_Doom_Source_Maze_Of_Doom_Pickup_h_11_ENHANCED_CONSTRUCTORS \
 private: \

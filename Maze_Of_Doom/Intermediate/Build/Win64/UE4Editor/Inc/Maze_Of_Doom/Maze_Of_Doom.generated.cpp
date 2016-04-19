@@ -9,38 +9,181 @@
 #include "Maze_Of_Doom.generated.dep.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMaze_Of_Doom() {}
+	void ALevelGenerator::StaticRegisterNativesALevelGenerator()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(ALevelGenerator::StaticClass(),"CreateLevel",(Native)&ALevelGenerator::execCreateLevel);
+		FNativeFunctionRegistrar::RegisterFunction(ALevelGenerator::StaticClass(),"getDone",(Native)&ALevelGenerator::execgetDone);
+	}
+	IMPLEMENT_CLASS(ALevelGenerator, 3459658381);
 	void AMaze_Of_DoomCharacter::StaticRegisterNativesAMaze_Of_DoomCharacter()
 	{
+		FNativeFunctionRegistrar::RegisterFunction(AMaze_Of_DoomCharacter::StaticClass(),"CollectPickups",(Native)&AMaze_Of_DoomCharacter::execCollectPickups);
 	}
-	IMPLEMENT_CLASS(AMaze_Of_DoomCharacter, 943559964);
+	IMPLEMENT_CLASS(AMaze_Of_DoomCharacter, 1621781354);
 	void AMaze_Of_DoomGameMode::StaticRegisterNativesAMaze_Of_DoomGameMode()
 	{
 	}
 	IMPLEMENT_CLASS(AMaze_Of_DoomGameMode, 1689518809);
+	void APickup::WasCollected()
+	{
+		ProcessEvent(FindFunctionChecked(MAZE_OF_DOOM_WasCollected),NULL);
+	}
 	void APickup::StaticRegisterNativesAPickup()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(APickup::StaticClass(),"IsActive",(Native)&APickup::execIsActive);
 		FNativeFunctionRegistrar::RegisterFunction(APickup::StaticClass(),"SetActive",(Native)&APickup::execSetActive);
+		FNativeFunctionRegistrar::RegisterFunction(APickup::StaticClass(),"WasCollected",(Native)&APickup::execWasCollected);
 	}
-	IMPLEMENT_CLASS(APickup, 1610019390);
+	IMPLEMENT_CLASS(APickup, 4233640005);
+	void AEnergyPickup::StaticRegisterNativesAEnergyPickup()
+	{
+	}
+	IMPLEMENT_CLASS(AEnergyPickup, 3468859267);
+	void ARoom::StaticRegisterNativesARoom()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"getDoor",(Native)&ARoom::execgetDoor);
+		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"getRotation",(Native)&ARoom::execgetRotation);
+		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"getType",(Native)&ARoom::execgetType);
+		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"getX",(Native)&ARoom::execgetX);
+		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"getY",(Native)&ARoom::execgetY);
+		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"isEndRoom",(Native)&ARoom::execisEndRoom);
+		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"setDoor",(Native)&ARoom::execsetDoor);
+		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"setPos",(Native)&ARoom::execsetPos);
+	}
+	IMPLEMENT_CLASS(ARoom, 767768938);
+FName MAZE_OF_DOOM_WasCollected = FName(TEXT("WasCollected"));
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
+	ENGINE_API class UClass* Z_Construct_UClass_AActor();
 	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
+	ENGINE_API class UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
-	ENGINE_API class UClass* Z_Construct_UClass_AActor();
 	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 
+	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ALevelGenerator_CreateLevel();
+	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ALevelGenerator_getDone();
+	MAZE_OF_DOOM_API class UClass* Z_Construct_UClass_ALevelGenerator_NoRegister();
+	MAZE_OF_DOOM_API class UClass* Z_Construct_UClass_ALevelGenerator();
+	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_AMaze_Of_DoomCharacter_CollectPickups();
 	MAZE_OF_DOOM_API class UClass* Z_Construct_UClass_AMaze_Of_DoomCharacter_NoRegister();
 	MAZE_OF_DOOM_API class UClass* Z_Construct_UClass_AMaze_Of_DoomCharacter();
 	MAZE_OF_DOOM_API class UClass* Z_Construct_UClass_AMaze_Of_DoomGameMode_NoRegister();
 	MAZE_OF_DOOM_API class UClass* Z_Construct_UClass_AMaze_Of_DoomGameMode();
 	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_APickup_IsActive();
 	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_APickup_SetActive();
+	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_APickup_WasCollected();
 	MAZE_OF_DOOM_API class UClass* Z_Construct_UClass_APickup_NoRegister();
 	MAZE_OF_DOOM_API class UClass* Z_Construct_UClass_APickup();
+	MAZE_OF_DOOM_API class UClass* Z_Construct_UClass_AEnergyPickup_NoRegister();
+	MAZE_OF_DOOM_API class UClass* Z_Construct_UClass_AEnergyPickup();
+	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_getDoor();
+	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_getRotation();
+	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_getType();
+	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_getX();
+	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_getY();
+	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_isEndRoom();
+	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_setDoor();
+	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_setPos();
+	MAZE_OF_DOOM_API class UClass* Z_Construct_UClass_ARoom_NoRegister();
+	MAZE_OF_DOOM_API class UClass* Z_Construct_UClass_ARoom();
 	MAZE_OF_DOOM_API class UPackage* Z_Construct_UPackage_Maze_Of_Doom();
+	UFunction* Z_Construct_UFunction_ALevelGenerator_CreateLevel()
+	{
+		UObject* Outer=Z_Construct_UClass_ALevelGenerator();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("CreateLevel"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Room"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("LevelGenerator.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Generate the level"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ALevelGenerator_getDone()
+	{
+		struct LevelGenerator_eventgetDone_Parms
+		{
+			TArray<ARoom*> ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_ALevelGenerator();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("getDone"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x14020401, 65535, sizeof(LevelGenerator_eventgetDone_Parms));
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_Native) UArrayProperty(CPP_PROPERTY_BASE(ReturnValue, LevelGenerator_eventgetDone_Parms), 0x0000000000000580);
+			UProperty* NewProp_ReturnValue_Inner = new(EC_InternalUseOnlyConstructor, NewProp_ReturnValue, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_Native) UObjectProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000, Z_Construct_UClass_ARoom_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Room"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("LevelGenerator.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("getters"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_ALevelGenerator_NoRegister()
+	{
+		return ALevelGenerator::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ALevelGenerator()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_Maze_Of_Doom();
+			OuterClass = ALevelGenerator::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_ALevelGenerator_CreateLevel());
+				OuterClass->LinkChild(Z_Construct_UFunction_ALevelGenerator_getDone());
+
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ALevelGenerator_CreateLevel()); // 392883470
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ALevelGenerator_getDone()); // 1912881339
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("LevelGenerator.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("LevelGenerator.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ALevelGenerator(Z_Construct_UClass_ALevelGenerator, TEXT("ALevelGenerator"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ALevelGenerator);
+	UFunction* Z_Construct_UFunction_AMaze_Of_DoomCharacter_CollectPickups()
+	{
+		UObject* Outer=Z_Construct_UClass_AMaze_Of_DoomCharacter();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("CollectPickups"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04080401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Pickups"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Maze_Of_DoomCharacter.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Called when we press a key to collect any pickups inside the CollectionSphere"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AMaze_Of_DoomCharacter_NoRegister()
 	{
 		return AMaze_Of_DoomCharacter::StaticClass();
@@ -58,13 +201,16 @@ void EmptyLinkFunctionForGeneratedCodeMaze_Of_Doom() {}
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x20800080;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_AMaze_Of_DoomCharacter_CollectPickups());
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_BaseLookUpRate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("BaseLookUpRate"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(BaseLookUpRate, AMaze_Of_DoomCharacter), 0x0000000000020015);
 				UProperty* NewProp_BaseTurnRate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("BaseTurnRate"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(BaseTurnRate, AMaze_Of_DoomCharacter), 0x0000000000020015);
+				UProperty* NewProp_CollectionSphere = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CollectionSphere"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CollectionSphere, AMaze_Of_DoomCharacter), 0x00000000000a001d, Z_Construct_UClass_USphereComponent_NoRegister());
 				UProperty* NewProp_FollowCamera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("FollowCamera"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(FollowCamera, AMaze_Of_DoomCharacter), 0x00000000000a001d, Z_Construct_UClass_UCameraComponent_NoRegister());
 				UProperty* NewProp_CameraBoom = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CameraBoom"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CameraBoom, AMaze_Of_DoomCharacter), 0x00000000000a001d, Z_Construct_UClass_USpringArmComponent_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AMaze_Of_DoomCharacter_CollectPickups()); // 2557580046
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
 				OuterClass->StaticLink();
 #if WITH_METADATA
@@ -78,6 +224,11 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_BaseTurnRate, TEXT("Category"), TEXT("Camera"));
 				MetaData->SetValue(NewProp_BaseTurnRate, TEXT("ModuleRelativePath"), TEXT("Maze_Of_DoomCharacter.h"));
 				MetaData->SetValue(NewProp_BaseTurnRate, TEXT("ToolTip"), TEXT("Base turn rate, in deg/sec. Other scaling may affect final turn rate."));
+				MetaData->SetValue(NewProp_CollectionSphere, TEXT("AllowPrivateAccess"), TEXT("true"));
+				MetaData->SetValue(NewProp_CollectionSphere, TEXT("Category"), TEXT("Camera"));
+				MetaData->SetValue(NewProp_CollectionSphere, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_CollectionSphere, TEXT("ModuleRelativePath"), TEXT("Maze_Of_DoomCharacter.h"));
+				MetaData->SetValue(NewProp_CollectionSphere, TEXT("ToolTip"), TEXT("Collection sphere"));
 				MetaData->SetValue(NewProp_FollowCamera, TEXT("AllowPrivateAccess"), TEXT("true"));
 				MetaData->SetValue(NewProp_FollowCamera, TEXT("Category"), TEXT("Camera"));
 				MetaData->SetValue(NewProp_FollowCamera, TEXT("EditInline"), TEXT("true"));
@@ -178,6 +329,23 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_APickup_WasCollected()
+	{
+		UObject* Outer=Z_Construct_UClass_APickup();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("WasCollected"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x08020C00, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Pickup.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Function to call when the pickup is collected"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_APickup_NoRegister()
 	{
 		return APickup::StaticClass();
@@ -197,12 +365,14 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 				OuterClass->LinkChild(Z_Construct_UFunction_APickup_IsActive());
 				OuterClass->LinkChild(Z_Construct_UFunction_APickup_SetActive());
+				OuterClass->LinkChild(Z_Construct_UFunction_APickup_WasCollected());
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_PickupMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("PickupMesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(PickupMesh, APickup), 0x00000000000a001d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_APickup_IsActive()); // 3119058325
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_APickup_SetActive()); // 20499600
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_APickup_WasCollected()); // 2150729986
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
@@ -221,6 +391,282 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_APickup(Z_Construct_UClass_APickup, TEXT("APickup"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(APickup);
+	UClass* Z_Construct_UClass_AEnergyPickup_NoRegister()
+	{
+		return AEnergyPickup::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AEnergyPickup()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APickup();
+			Z_Construct_UPackage_Maze_Of_Doom();
+			OuterClass = AEnergyPickup::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_Power = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Power"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(Power, AEnergyPickup), 0x0000080000000005);
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("EnergyPickup.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("EnergyPickup.h"));
+				MetaData->SetValue(NewProp_Power, TEXT("BlueprintProtected"), TEXT("true"));
+				MetaData->SetValue(NewProp_Power, TEXT("Category"), TEXT("Power"));
+				MetaData->SetValue(NewProp_Power, TEXT("ModuleRelativePath"), TEXT("EnergyPickup.h"));
+				MetaData->SetValue(NewProp_Power, TEXT("ToolTip"), TEXT("Sets the amount of power the battery gives to the character"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AEnergyPickup(Z_Construct_UClass_AEnergyPickup, TEXT("AEnergyPickup"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AEnergyPickup);
+	UFunction* Z_Construct_UFunction_ARoom_getDoor()
+	{
+		struct Room_eventgetDoor_Parms
+		{
+			int32 door;
+			int32 ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_ARoom();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("getDoor"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x14020401, 65535, sizeof(Room_eventgetDoor_Parms));
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(ReturnValue, Room_eventgetDoor_Parms), 0x0000000000000580);
+			UProperty* NewProp_door = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("door"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(door, Room_eventgetDoor_Parms), 0x0000000000000080);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Room"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Room.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Getter"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ARoom_getRotation()
+	{
+		struct Room_eventgetRotation_Parms
+		{
+			int32 ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_ARoom();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("getRotation"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x14020401, 65535, sizeof(Room_eventgetRotation_Parms));
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(ReturnValue, Room_eventgetRotation_Parms), 0x0000000000000580);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Room"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Room.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Getter"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ARoom_getType()
+	{
+		struct Room_eventgetType_Parms
+		{
+			int32 ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_ARoom();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("getType"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x14020401, 65535, sizeof(Room_eventgetType_Parms));
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(ReturnValue, Room_eventgetType_Parms), 0x0000000000000580);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Room"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Room.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Getter"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ARoom_getX()
+	{
+		struct Room_eventgetX_Parms
+		{
+			int32 ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_ARoom();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("getX"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x14020401, 65535, sizeof(Room_eventgetX_Parms));
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(ReturnValue, Room_eventgetX_Parms), 0x0000000000000580);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Room"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Room.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Getter"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ARoom_getY()
+	{
+		struct Room_eventgetY_Parms
+		{
+			int32 ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_ARoom();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("getY"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x14020401, 65535, sizeof(Room_eventgetY_Parms));
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(ReturnValue, Room_eventgetY_Parms), 0x0000000000000580);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Room"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Room.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Getter"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ARoom_isEndRoom()
+	{
+		struct Room_eventisEndRoom_Parms
+		{
+			bool ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_ARoom();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("isEndRoom"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x14020401, 65535, sizeof(Room_eventisEndRoom_Parms));
+			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, Room_eventisEndRoom_Parms, bool);
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_Native) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, Room_eventisEndRoom_Parms), 0x0000000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, Room_eventisEndRoom_Parms), sizeof(bool), true);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Room"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Room.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Getter"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ARoom_setDoor()
+	{
+		struct Room_eventsetDoor_Parms
+		{
+			int32 door;
+			int32 newValue;
+		};
+		UObject* Outer=Z_Construct_UClass_ARoom();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("setDoor"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535, sizeof(Room_eventsetDoor_Parms));
+			UProperty* NewProp_newValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("newValue"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(newValue, Room_eventsetDoor_Parms), 0x0000000000000080);
+			UProperty* NewProp_door = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("door"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(door, Room_eventsetDoor_Parms), 0x0000000000000080);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Room"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Room.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Setter"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ARoom_setPos()
+	{
+		struct Room_eventsetPos_Parms
+		{
+			int32 x;
+			int32 y;
+		};
+		UObject* Outer=Z_Construct_UClass_ARoom();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("setPos"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535, sizeof(Room_eventsetPos_Parms));
+			UProperty* NewProp_y = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("y"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(y, Room_eventsetPos_Parms), 0x0000000000000080);
+			UProperty* NewProp_x = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("x"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(x, Room_eventsetPos_Parms), 0x0000000000000080);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Room"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Room.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Setter"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_ARoom_NoRegister()
+	{
+		return ARoom::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ARoom()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_Maze_Of_Doom();
+			OuterClass = ARoom::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_getDoor());
+				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_getRotation());
+				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_getType());
+				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_getX());
+				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_getY());
+				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_isEndRoom());
+				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_setDoor());
+				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_setPos());
+
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_getDoor()); // 539360503
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_getRotation()); // 2794610818
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_getType()); // 2466036292
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_getX()); // 744461016
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_getY()); // 4094742182
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_isEndRoom()); // 1437415629
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_setDoor()); // 1927681319
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_setPos()); // 126879841
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Room.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Room.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ARoom(Z_Construct_UClass_ARoom, TEXT("ARoom"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ARoom);
 	UPackage* Z_Construct_UPackage_Maze_Of_Doom()
 	{
 		static UPackage* ReturnPackage = NULL;
@@ -229,8 +675,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Maze_Of_Doom")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x03BA65C4;
-			Guid.B = 0x2A412FA0;
+			Guid.A = 0x88809577;
+			Guid.B = 0x8866F733;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);
