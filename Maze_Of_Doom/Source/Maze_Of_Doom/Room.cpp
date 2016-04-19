@@ -27,7 +27,7 @@ int32 ARoom::getType()
 void ARoom::determineRoom()
 {
 	int32 count = 0;
-	int32 rand = FMath::RandRange(0, 4);
+	int32 rand = FMath::RandRange(0, 7);
 
 	//count the doors
 	for (int32 i = 0; i < 4; i++)
@@ -57,33 +57,33 @@ void ARoom::determineRoom()
 	{
 		if (doors[0] == doors[3] && doors[0] != 0)
 		{
-			type += 10;
+			type += 16;
 			rotation = 3;
 		}
 		else if (doors[1] == doors[0] && doors[1] != 0)
 		{
-			type += 10;
+			type += 16;
 			rotation = 2;
 		}
 		else if (doors[2] == doors[1] && doors[2] != 0)
 		{
-			type += 10;
+			type += 16;
 			rotation = 1;
 		}
 		else if (doors[3] == doors[2] && doors[3] != 0)
 		{
-			type += 10;
+			type += 16;
 			rotation = 0;
 		}
 		//across
 		else if  (doors[0] == doors[2] && doors[0] != 0)
 		{
-			type += 5;
+			type += 8;
 			rotation = 0;
 		}
 		else
 		{
-			type += 5;
+			type += 8;
 			rotation = 1;
 		}
 		
@@ -92,28 +92,28 @@ void ARoom::determineRoom()
 	{
 		if (doors[0] == doors[3] && doors[2] == 0)
 		{
-			type += 15;
+			type += 24;
 			rotation = 2;
 		}
 		else if (doors[1] == doors[0] && doors[3] == 0)
 		{
-			type += 15;
+			type += 24;
 			rotation = 1;
 		}
 		else if (doors[2] == doors[1] && doors[0] == 0)
 		{
-			type += 15;
+			type += 24;
 			rotation = 0;
 		}
 		else
 		{
-			type += 15;
+			type += 24;
 			rotation = 3;
 		}
 	}
 	else if (count == 4)//4door
 	{
-		type += 20;
+		type += 32;
 	}	
 }
 
