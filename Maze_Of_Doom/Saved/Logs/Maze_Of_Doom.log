@@ -1,182 +1,988 @@
-﻿[2016.03.31-19.43.44:802][  0]Log file open, 03/31/16 12:43:44
-[2016.03.31-19.43.44:802][  0]LogInit:Display: Running engine for game: Maze_Of_Doom
-[2016.03.31-19.43.44:802][  0]LogPlatformFile: Not using cached read wrapper
-[2016.03.31-19.43.44:802][  0]LogInit:Display: RandInit(-890930277) SRandInit(-890930275).
-[2016.03.31-19.43.44:802][  0]LogTaskGraph: Started task graph with 4 named threads and 7 total threads.
-[2016.03.31-19.43.44:802][  0]LogStats: Stats thread started at 0.127661
-[2016.03.31-19.43.44:802][  0]LogInit: Version: 4.10.2-2818068+++depot+UE4-Releases+4.10
-[2016.03.31-19.43.44:802][  0]LogInit: API Version: 2758231
-[2016.03.31-19.43.44:802][  0]LogInit: Compiled (64-bit): Jan  6 2016 17:36:42
-[2016.03.31-19.43.44:802][  0]LogInit: Compiled with Visual C++: 19.00.23026.00
-[2016.03.31-19.43.44:802][  0]LogInit: Build Configuration: Development
-[2016.03.31-19.43.44:802][  0]LogInit: Branch Name: ++depot+UE4-Releases+4.10
-[2016.03.31-19.43.44:802][  0]LogInit: Command line:  
-[2016.03.31-19.43.44:802][  0]LogInit: Base directory: C:/Program Files (x86)/Epic Games/4.10/Engine/Binaries/Win64/
-[2016.03.31-19.43.44:802][  0]LogInit: Rocket: 1
-[2016.03.31-19.43.44:819][  0]LogInit: Using libcurl 7.41.0
-[2016.03.31-19.43.44:819][  0]LogInit:  - built for x86_64-pc-win32
-[2016.03.31-19.43.44:819][  0]LogInit:  - supports SSL with WinSSL
-[2016.03.31-19.43.44:819][  0]LogInit:  - other features:
-[2016.03.31-19.43.44:819][  0]LogInit:      CURL_VERSION_SSL
-[2016.03.31-19.43.44:819][  0]LogInit:      CURL_VERSION_IPV6
-[2016.03.31-19.43.44:819][  0]LogInit:      CURL_VERSION_ASYNCHDNS
-[2016.03.31-19.43.44:819][  0]LogInit:      CURL_VERSION_LARGEFILE
-[2016.03.31-19.43.44:819][  0]LogInit:      CURL_VERSION_IDN
-[2016.03.31-19.43.44:819][  0]LogInit:  CurlRequestOptions (configurable via config and command line):
-[2016.03.31-19.43.44:819][  0]LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
-[2016.03.31-19.43.44:819][  0]LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
-[2016.03.31-19.43.44:819][  0]LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
-[2016.03.31-19.43.44:819][  0]LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
-[2016.03.31-19.43.44:834][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
-[2016.03.31-19.43.44:845][  0]LogInit: Object subsystem initialized
-[2016.03.31-19.43.44:847][  0]LogInit: Selected Device Profile: [Windows]
-[2016.03.31-19.43.44:847][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
-[2016.03.31-19.43.44:864][  0]LogInit: Computer: DAVIDMIERKE
-[2016.03.31-19.43.44:864][  0]LogInit: User: David
-[2016.03.31-19.43.44:864][  0]LogInit: CPU Page size=4096, Cores=4
-[2016.03.31-19.43.44:864][  0]LogInit: High frequency timer resolution =2.533205 MHz
-[2016.03.31-19.43.44:864][  0]LogMemory: Memory total: Physical=16.0GB (16GB approx)
-[2016.03.31-19.43.44:864][  0]LogMemory: Platform Memory Stats for Windows
-[2016.03.31-19.43.44:864][  0]LogMemory: Process Physical Memory: 56.14 MB used, 56.14 MB peak
-[2016.03.31-19.43.44:864][  0]LogMemory: Process Virtual Memory: 58.80 MB used, 58.80 MB peak
-[2016.03.31-19.43.44:864][  0]LogMemory: Physical Memory: 4874.64 MB used, 16333.18 MB total
-[2016.03.31-19.43.44:864][  0]LogMemory: Virtual Memory: 384.79 MB used, 134217728.00 MB total
-[2016.03.31-19.43.44:921][  0]LogTextLocalizationManager: No specific translations for ('en-US') exist, so ('en') translations will be used.
-[2016.03.31-19.43.45:684][  0]LogD3D11RHI: Found D3D11 adapter 0: NVIDIA GeForce GTX 965M (Feature Level 11_0)
-[2016.03.31-19.43.45:684][  0]LogD3D11RHI: Adapter has 1969MB of dedicated video memory, 0MB of dedicated system memory, and 8166MB of shared system memory, 1 output[s]
-[2016.03.31-19.43.45:686][  0]LogD3D11RHI: Found D3D11 adapter 1: Microsoft Basic Render Driver (Feature Level 11_0)
-[2016.03.31-19.43.45:686][  0]LogD3D11RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 8166MB of shared system memory, 0 output[s]
-[2016.03.31-19.43.45:686][  0]LogD3D11RHI: Chosen D3D11 Adapter Id = 0
-[2016.03.31-19.43.45:695][  0]LogD3D11RHI: !Direct3DDevice
-[2016.03.31-19.43.45:695][  0]LogRHI: Texture pool is 1361 MB (70% of 1945 MB)
-[2016.03.31-19.43.45:716][  0]LogD3D11RHI: Async texture creation enabled
-[2016.03.31-19.43.45:730][  0]LogShaderCompilers: Guid format shader working directory is -22 characters bigger than the processId version (../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Intermediate/Shaders/WorkingDirectory/1496/).
-[2016.03.31-19.43.45:730][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/David/AppData/Local/Temp/UnrealShaderWorkingDir/F7CDE4784F5890EA41567EBE9641F532/'.
-[2016.03.31-19.43.45:730][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
-[2016.03.31-19.43.46:909][  0]LogTemp:Display: Loaded TP AllDesktopTargetPlatform
-[2016.03.31-19.43.46:914][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
-[2016.03.31-19.43.46:920][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
-[2016.03.31-19.43.46:925][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
-[2016.03.31-19.43.46:932][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
-[2016.03.31-19.43.46:938][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
-[2016.03.31-19.43.46:941][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
-[2016.03.31-19.43.46:943][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
-[2016.03.31-19.43.46:945][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
-[2016.03.31-19.43.46:948][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
-[2016.03.31-19.43.46:951][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
-[2016.03.31-19.43.46:956][  0]LogTemp:Display: Loaded TP Android_MultiTargetPlatform
-[2016.03.31-19.43.46:956][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
-[2016.03.31-19.43.46:956][  0]LogTemp:Display: Loaded TP HTML5TargetPlatform
-[2016.03.31-19.43.46:974][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
-[2016.03.31-19.43.46:976][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
-[2016.03.31-19.43.46:979][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
-[2016.03.31-19.43.46:981][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
-[2016.03.31-19.43.46:981][  0]LogTargetPlatformManager:Display: Building Assets For Windows
-[2016.03.31-19.43.47:064][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
-[2016.03.31-19.43.47:104][  0]LogDerivedDataCache: Loaded boot cache 0.04s 42MB C:/Users/David/AppData/Local/UnrealEngine/4.10/DerivedDataCache/Boot.ddc.
-[2016.03.31-19.43.47:104][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/David/AppData/Local/UnrealEngine/4.10/DerivedDataCache/Boot.ddc
-[2016.03.31-19.43.47:104][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
-[2016.03.31-19.43.47:104][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
-[2016.03.31-19.43.47:104][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
-[2016.03.31-19.43.47:104][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
-[2016.03.31-19.43.47:157][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
-[2016.03.31-19.43.47:169][  0]LogDerivedDataCache: Using Local data cache path C:/Users/David/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
-[2016.03.31-19.43.47:325][  0]LogInit: Selected Device Profile: [Windows]
-[2016.03.31-19.43.47:327][  0]LogContentStreaming: Texture pool size is 0.000000MB
-[2016.03.31-19.43.47:662][  0]LogMeshUtilities: No automatic mesh reduction module available
-[2016.03.31-19.43.47:662][  0]LogMeshUtilities: No automatic mesh merging module available
-[2016.03.31-19.43.47:866][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
-[2016.03.31-19.43.49:211][  0]UdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
-[2016.03.31-19.43.49:342][  0]LogBlueprint:Warning: [compiler MixamoCharacter_Master] Warning InputAction Event references unknown Action 'Jump' for  InputAction Jump 
-[2016.03.31-19.43.49:348][  0]LogBlueprint:Warning: [compiler MixamoCharacter_Master] Warning [0006.32] Compile of MixamoCharacter_Master successful, but with 1 Warning(s) [in 10 ms]
-[2016.03.31-19.43.49:348][  0]LogBlueprint:Warning: [compiler MixamoCharacter_Master] Warning [0006.32] Compile of MixamoCharacter_Master successful, but with 2 Warning(s) [in 0 ms]
-[2016.03.31-19.43.49:348][  0]LogBlueprint:Warning: [compiler MixamoCharacter_Master] Warning [0006.32] Compile of MixamoCharacter_Master successful, but with 3 Warning(s) [in 0 ms]
-[2016.03.31-19.43.49:357][  0]LogBlueprint:Warning: [compiler MixamoCharacter_Master] Warning InputAction Event references unknown Action 'Jump' for  InputAction Jump 
-[2016.03.31-19.43.49:362][  0]LogBlueprint:Warning: [compiler MixamoCharacter_Master] Warning [0006.33] Compile of MixamoCharacter_Master successful, but with 1 Warning(s) [in 10 ms]
-[2016.03.31-19.43.49:362][  0]LogBlueprint:Warning: [compiler MixamoCharacter_Master] Warning [0006.33] Compile of MixamoCharacter_Master successful, but with 2 Warning(s) [in 0 ms]
-[2016.03.31-19.43.49:362][  0]LogBlueprint:Warning: [compiler MixamoCharacter_Master] Warning [0006.33] Compile of MixamoCharacter_Master successful, but with 3 Warning(s) [in 0 ms]
-[2016.03.31-19.43.49:503][  0]LogLinker:Warning: SkeletalMeshComponent_11 has an inappropriate outermost, it was probably saved with a deprecated outer (file: ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset)
-[2016.03.31-19.43.49:504][  0]LogLinker:Warning: SkeletalMeshComponent_11 has an inappropriate outermost, it was probably saved with a deprecated outer (file: ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset)
-[2016.03.31-19.43.49:505][  0]LogLinker:Warning: SkeletalMeshComponent_11 has an inappropriate outermost, it was probably saved with a deprecated outer (file: ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset)
-[2016.03.31-19.43.49:506][  0]LogLinker:Warning: SkeletalMeshComponent_11 has an inappropriate outermost, it was probably saved with a deprecated outer (file: ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset)
-[2016.03.31-19.43.49:774][  0]LogAssetRegistry: FAssetRegistry took 0.0113 seconds to start up
-[2016.03.31-19.43.50:057][  0]SourceControl: Info Source control is disabled
-[2016.03.31-19.43.50:104][  0]SourceControl: Info Source control is disabled
-[2016.03.31-19.43.50:128][  0]SourceControl: Info Source control is disabled
-[2016.03.31-19.43.50:154][  0]SourceControl: Info Source control is disabled
-[2016.03.31-19.43.50:608][  0]LogObj: 34595 objects as part of root set at end of initial load.
-[2016.03.31-19.43.50:608][  0]LogUObjectAllocator: 8225032 out of 0 bytes used by permanent object pool.
-[2016.03.31-19.43.50:694][  0]LogEngine: Initializing Engine...
-[2016.03.31-19.43.50:698][  0]LogHMD: Can't find Oculus library dev build: is proper Runtime installed? Version: 0.8.0.0
-[2016.03.31-19.43.50:699][  0]LogHMD: SteamVR failed to initialize.  Err: 110
-[2016.03.31-19.43.50:876][  0]LogAIModule: Creating AISystem for world NewWorld
-[2016.03.31-19.43.50:883][  0]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
-[2016.03.31-19.43.51:138][  0]LogInit: FAudioDevice initialized.
-[2016.03.31-19.43.51:166][  0]LogDerivedDataCache: Saved boot cache 0.03s 42MB C:/Users/David/AppData/Local/UnrealEngine/4.10/DerivedDataCache/Boot.ddc.
-[2016.03.31-19.43.51:173][  0]LogInit: Texture streaming: Enabled
-[2016.03.31-19.43.51:182][  0]LogAnalytics: Creating configured Analytics provider AnalyticsET
-[2016.03.31-19.43.51:182][  0]LogAnalytics: [UEEditor.Rocket.Release] APIServer = http://et2.epicgames.com/ET2/. AppVersion = 4.10.2-2818068+++depot+UE4-Releases+4.10
-[2016.03.31-19.43.51:182][  0]LogAnalytics: [UEEditor.Rocket.Release] SetUserId f3fd65ed42405c16483d24826775683a|859fd02483094003b2ff534449d086e1|f7dbdf05-1b9e-457e-a434-53e302263073
-[2016.03.31-19.43.51:182][  0]LogAnalytics: [UEEditor.Rocket.Release] AnalyticsET::StartSession
-[2016.03.31-19.43.51:199][  0]LogInit: Transaction tracking system initialized
-[2016.03.31-19.43.51:251][  0]BlueprintLog: New page: Editor Load
-[2016.03.31-19.43.51:426][  0]LocalizationService: Info Localization service is disabled
-[2016.03.31-19.43.51:540][  0]LogConsoleResponse:Display: 
-[2016.03.31-19.43.51:694][  0]LogCook:Display: Done creating registry. It took  0.00s.
-[2016.03.31-19.43.51:794][  0]LogFileCache: Scanning file cache for directory 'C:/Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/' took 0.03s
-[2016.03.31-19.43.51:794][  0]SourceControl: Info Source control is disabled
-[2016.03.31-19.43.51:794][  0]Cmd: MAP LOAD FILE="../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
-[2016.03.31-19.43.51:794][  0]LogEditorServer:Warning: Can't find file '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap'
-[2016.03.31-19.43.51:794][  0]Cmd: MAP CHECKDEP NOCLEARLOG
-[2016.03.31-19.43.51:862][  0]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 67.389ms to complete.
-[2016.03.31-19.43.51:862][  0]LogFileHelpers: Loading map 'ThirdPersonExampleMap' took 0.068
-[2016.03.31-19.43.52:002][  0]LogCollectionManager: Loaded 0 collections in 0.003864 seconds
-[2016.03.31-19.43.52:043][  0]LogFileCache: Scanning file cache for directory 'C:/Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Collections/' took 0.01s
-[2016.03.31-19.43.52:043][  0]LogFileCache: Scanning file cache for directory 'C:/Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Developers/David/Collections/' took 0.01s
-[2016.03.31-19.43.52:043][  0]LogFileCache: Scanning file cache for directory 'C:/Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Collections/' took 0.01s
-[2016.03.31-19.43.52:043][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000002 seconds
-[2016.03.31-19.43.52:054][  0]LogContentBrowser: Native class hierarchy populated in 0.0111 seconds. Added 1899 classes and 340 folders.
-[2016.03.31-19.43.52:066][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0020 seconds. Added 0 classes and 0 folders.
-[2016.03.31-19.43.52:129][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0021 seconds. Added 0 classes and 0 folders.
-[2016.03.31-19.43.52:143][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0020 seconds. Added 1 classes and 2 folders.
-[2016.03.31-19.43.52:169][  0]LogCrashTracker: Crashtracker disabled due to settings.
-[2016.03.31-19.43.52:176][  0]LogUObjectGlobals:Warning: Failed to find object 'Class None.'
-[2016.03.31-19.43.52:199][  0]LogLoad: Full Startup: 9.17 seconds (BP compile: 0.10 seconds)
-[2016.03.31-19.43.52:542][  0]LogOcInput: Can't find Oculus library dev build: is proper Runtime installed? Version: 0.8.0.0
-[2016.03.31-19.43.52:589][  0]LogContentStreaming: Texture pool size now 1000 MB
-[2016.03.31-19.43.52:901][  2]LogRenderer: Reallocating scene render targets to support 1076x568 (Frame:2).
-[2016.03.31-19.43.53:548][  3]LogAssetRegistry: Asset discovery search completed in 3.7855 seconds
-[2016.03.31-19.43.53:549][  3]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000000 seconds (found 0 objects)
-[2016.03.31-19.43.53:549][  3]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000030 seconds (updated 0 objects)
-[2016.03.31-19.44.25:983][309]LogLinker:Warning: Asset '../../../Engine/Content/ArtTools/RenderToTexture/Macros/RenderToTextureMacros.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
-[2016.03.31-19.44.26:801][309]LogContentBrowser: Native class hierarchy updated for 'BlueprintGraph' in 0.0033 seconds. Added 107 classes and 0 folders.
-[2016.03.31-19.45.00:493][957]LogPlayLevel: PlayLevel: No blueprints needed recompiling
-[2016.03.31-19.45.00:493][957]PIE: New page: PIE session: Untitled_0 (Mar 31, 2016, 5:45:00 AM)
-[2016.03.31-19.45.00:493][957]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_0
-[2016.03.31-19.45.00:494][957]LogPlayLevel: PIE: StaticDuplicateObject took: (0.000839s)
-[2016.03.31-19.45.00:495][957]LogAIModule: Creating AISystem for world NewWorld
-[2016.03.31-19.45.00:495][957]LogPlayLevel: PIE: World Init took: (0.000917s)
-[2016.03.31-19.45.00:495][957]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_0.NewWorld to /Temp/UEDPIE_0_Untitled_0.NewWorld (0.002084s)
-[2016.03.31-19.45.00:495][957]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
-[2016.03.31-19.45.00:534][957]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001ED4D63C180
-[2016.03.31-19.45.00:546][957]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
-[2016.03.31-19.45.00:558][957]LogInit: FAudioDevice initialized.
-[2016.03.31-19.45.00:616][957]LogWorld: Game class is 'Maze_Of_DoomGameMode'
-[2016.03.31-19.45.00:619][957]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_0.NewWorld up for play (max tick rate 60) at 2016.03.31-12.45.00
-[2016.03.31-19.45.00:619][957]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_0.NewWorld:PersistentLevel.GameSession_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
-[2016.03.31-19.45.00:619][957]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_0.NewWorld:PersistentLevel.GameNetworkManager_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
-[2016.03.31-19.45.00:619][957]LogWorld: Bringing up level for play took: 0.001431
-[2016.03.31-19.45.00:627][957]PIE: Info Play in editor start time for /Temp/UEDPIE_0_Untitled_0 0.049
-[2016.03.31-19.45.05:149][221]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001ED303740E0
-[2016.03.31-19.45.08:025][369]LogAIModule: Creating AISystem for world TutorialLevel
-[2016.03.31-19.45.08:117][369]Cmd: MAP LOAD FILE="../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
-[2016.03.31-19.45.08:117][369]LightingResults: New page: Lighting Build
-[2016.03.31-19.45.08:127][369]LogContentBrowser: Native class hierarchy updated for 'StatsViewer' in 0.0042 seconds. Added 5 classes and 0 folders.
-[2016.03.31-19.45.08:166][369]LoadErrors: New page: Loading map: TutorialLevel.umap
-[2016.03.31-19.45.08:166][369]MapCheck: New page: Map Check
-[2016.03.31-19.45.08:166][369]LightingResults: New page: Lighting Build
-[2016.03.31-19.45.08:197][369]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001ED4D33E160
-[2016.03.31-19.45.08:205][369]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
-[2016.03.31-19.45.08:255][369]Cmd: MAP CHECKDEP NOCLEARLOG
-[2016.03.31-19.45.08:327][369]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 72.096ms to complete.
-[2016.03.31-19.45.08:327][369]LogFileHelpe
+﻿[2016.04.21-19.48.00:985][  0]Log file open, 04/21/16 12:48:00
+[2016.04.21-19.48.00:985][  0]LogInit:Display: Running engine for game: Maze_Of_Doom
+[2016.04.21-19.48.00:985][  0]LogPlatformFile: Not using cached read wrapper
+[2016.04.21-19.48.00:985][  0]LogInit:Display: RandInit(1346616408) SRandInit(1346616408).
+[2016.04.21-19.48.00:985][  0]LogTaskGraph: Started task graph with 4 named threads and 7 total threads.
+[2016.04.21-19.48.00:985][  0]LogStats: Stats thread started at 0.131189
+[2016.04.21-19.48.00:985][  0]LogInit: Version: 4.10.2-2818068+++depot+UE4-Releases+4.10
+[2016.04.21-19.48.00:985][  0]LogInit: API Version: 2758231
+[2016.04.21-19.48.00:985][  0]LogInit: Compiled (64-bit): Jan  6 2016 17:36:42
+[2016.04.21-19.48.00:985][  0]LogInit: Compiled with Visual C++: 19.00.23026.00
+[2016.04.21-19.48.00:985][  0]LogInit: Build Configuration: Development
+[2016.04.21-19.48.00:985][  0]LogInit: Branch Name: ++depot+UE4-Releases+4.10
+[2016.04.21-19.48.00:985][  0]LogInit: Command line:  
+[2016.04.21-19.48.00:985][  0]LogInit: Base directory: C:/Program Files (x86)/Epic Games/4.10/Engine/Binaries/Win64/
+[2016.04.21-19.48.00:985][  0]LogInit: Rocket: 1
+[2016.04.21-19.48.01:038][  0]LogInit: Using libcurl 7.41.0
+[2016.04.21-19.48.01:038][  0]LogInit:  - built for x86_64-pc-win32
+[2016.04.21-19.48.01:038][  0]LogInit:  - supports SSL with WinSSL
+[2016.04.21-19.48.01:038][  0]LogInit:  - other features:
+[2016.04.21-19.48.01:038][  0]LogInit:      CURL_VERSION_SSL
+[2016.04.21-19.48.01:038][  0]LogInit:      CURL_VERSION_IPV6
+[2016.04.21-19.48.01:038][  0]LogInit:      CURL_VERSION_ASYNCHDNS
+[2016.04.21-19.48.01:038][  0]LogInit:      CURL_VERSION_LARGEFILE
+[2016.04.21-19.48.01:038][  0]LogInit:      CURL_VERSION_IDN
+[2016.04.21-19.48.01:038][  0]LogInit:  CurlRequestOptions (configurable via config and command line):
+[2016.04.21-19.48.01:038][  0]LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+[2016.04.21-19.48.01:038][  0]LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+[2016.04.21-19.48.01:038][  0]LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+[2016.04.21-19.48.01:038][  0]LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+[2016.04.21-19.48.01:197][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
+[2016.04.21-19.48.01:208][  0]LogInit: Object subsystem initialized
+[2016.04.21-19.48.01:209][  0]LogInit: Selected Device Profile: [Windows]
+[2016.04.21-19.48.01:209][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2016.04.21-19.48.01:252][  0]LogInit: Computer: DAVIDMIERKE
+[2016.04.21-19.48.01:252][  0]LogInit: User: David
+[2016.04.21-19.48.01:252][  0]LogInit: CPU Page size=4096, Cores=4
+[2016.04.21-19.48.01:252][  0]LogInit: High frequency timer resolution =2.533209 MHz
+[2016.04.21-19.48.01:252][  0]LogMemory: Memory total: Physical=16.0GB (16GB approx)
+[2016.04.21-19.48.01:252][  0]LogMemory: Platform Memory Stats for Windows
+[2016.04.21-19.48.01:252][  0]LogMemory: Process Physical Memory: 56.16 MB used, 56.16 MB peak
+[2016.04.21-19.48.01:252][  0]LogMemory: Process Virtual Memory: 58.75 MB used, 58.75 MB peak
+[2016.04.21-19.48.01:252][  0]LogMemory: Physical Memory: 4602.34 MB used, 16333.18 MB total
+[2016.04.21-19.48.01:252][  0]LogMemory: Virtual Memory: 384.79 MB used, 134217728.00 MB total
+[2016.04.21-19.48.01:651][  0]LogTextLocalizationManager: No specific translations for ('en-US') exist, so ('en') translations will be used.
+[2016.04.21-19.48.02:075][  0]LogD3D11RHI: Found D3D11 adapter 0: NVIDIA GeForce GTX 965M (Feature Level 11_0)
+[2016.04.21-19.48.02:075][  0]LogD3D11RHI: Adapter has 1969MB of dedicated video memory, 0MB of dedicated system memory, and 8166MB of shared system memory, 1 output[s]
+[2016.04.21-19.48.02:076][  0]LogD3D11RHI: Found D3D11 adapter 1: Microsoft Basic Render Driver (Feature Level 11_0)
+[2016.04.21-19.48.02:076][  0]LogD3D11RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 8166MB of shared system memory, 0 output[s]
+[2016.04.21-19.48.02:077][  0]LogD3D11RHI: Chosen D3D11 Adapter Id = 0
+[2016.04.21-19.48.02:081][  0]LogD3D11RHI: !Direct3DDevice
+[2016.04.21-19.48.02:081][  0]LogRHI: Texture pool is 1361 MB (70% of 1945 MB)
+[2016.04.21-19.48.02:095][  0]LogD3D11RHI: Async texture creation enabled
+[2016.04.21-19.48.02:113][  0]LogShaderCompilers: Guid format shader working directory is -22 characters bigger than the processId version (../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Intermediate/Shaders/WorkingDirectory/2888/).
+[2016.04.21-19.48.02:113][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/David/AppData/Local/Temp/UnrealShaderWorkingDir/56B63D7E4DFCC19190BFD6B33F438CA7/'.
+[2016.04.21-19.48.02:113][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
+[2016.04.21-19.48.04:052][  0]LogTemp:Display: Loaded TP AllDesktopTargetPlatform
+[2016.04.21-19.48.04:057][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
+[2016.04.21-19.48.04:061][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
+[2016.04.21-19.48.04:066][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
+[2016.04.21-19.48.04:070][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
+[2016.04.21-19.48.04:075][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
+[2016.04.21-19.48.04:078][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
+[2016.04.21-19.48.04:081][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
+[2016.04.21-19.48.04:083][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
+[2016.04.21-19.48.04:086][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
+[2016.04.21-19.48.04:089][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
+[2016.04.21-19.48.04:095][  0]LogTemp:Display: Loaded TP Android_MultiTargetPlatform
+[2016.04.21-19.48.04:095][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
+[2016.04.21-19.48.04:095][  0]LogTemp:Display: Loaded TP HTML5TargetPlatform
+[2016.04.21-19.48.04:163][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
+[2016.04.21-19.48.04:166][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
+[2016.04.21-19.48.04:168][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
+[2016.04.21-19.48.04:174][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
+[2016.04.21-19.48.04:174][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2016.04.21-19.48.04:878][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2016.04.21-19.48.05:365][  0]LogDerivedDataCache: Loaded boot cache 0.49s 43MB C:/Users/David/AppData/Local/UnrealEngine/4.10/DerivedDataCache/Boot.ddc.
+[2016.04.21-19.48.05:365][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/David/AppData/Local/UnrealEngine/4.10/DerivedDataCache/Boot.ddc
+[2016.04.21-19.48.05:366][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2016.04.21-19.48.05:366][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2016.04.21-19.48.05:366][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2016.04.21-19.48.05:366][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2016.04.21-19.48.05:444][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2016.04.21-19.48.05:456][  0]LogDerivedDataCache: Using Local data cache path C:/Users/David/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2016.04.21-19.48.12:768][  0]LogInit: Selected Device Profile: [Windows]
+[2016.04.21-19.48.12:770][  0]LogContentStreaming: Texture pool size is 0.000000MB
+[2016.04.21-19.48.12:919][  0]LogMeshUtilities: No automatic mesh reduction module available
+[2016.04.21-19.48.12:919][  0]LogMeshUtilities: No automatic mesh merging module available
+[2016.04.21-19.48.13:795][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2016.04.21-19.48.35:189][  0]UdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2016.04.21-19.48.35:462][  0]LogLinker:Warning: SkeletalMeshComponent_11 has an inappropriate outermost, it was probably saved with a deprecated outer (file: ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset)
+[2016.04.21-19.48.35:463][  0]LogLinker:Warning: SkeletalMeshComponent_11 has an inappropriate outermost, it was probably saved with a deprecated outer (file: ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset)
+[2016.04.21-19.48.35:463][  0]LogLinker:Warning: SkeletalMeshComponent_11 has an inappropriate outermost, it was probably saved with a deprecated outer (file: ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset)
+[2016.04.21-19.48.35:463][  0]LogLinker:Warning: SkeletalMeshComponent_11 has an inappropriate outermost, it was probably saved with a deprecated outer (file: ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset)
+[2016.04.21-19.48.35:822][  0]LogAssetRegistry: FAssetRegistry took 0.0113 seconds to start up
+[2016.04.21-19.48.36:158][  0]SourceControl: Info Source control is disabled
+[2016.04.21-19.48.36:248][  0]SourceControl: Info Source control is disabled
+[2016.04.21-19.48.36:260][  0]SourceControl: Info Source control is disabled
+[2016.04.21-19.48.36:271][  0]SourceControl: Info Source control is disabled
+[2016.04.21-19.48.37:226][  0]LogObj: 34550 objects as part of root set at end of initial load.
+[2016.04.21-19.48.37:226][  0]LogUObjectAllocator: 8203032 out of 0 bytes used by permanent object pool.
+[2016.04.21-19.48.37:347][  0]LogEngine: Initializing Engine...
+[2016.04.21-19.48.37:349][  0]LogHMD: Can't find Oculus library dev build: is proper Runtime installed? Version: 0.8.0.0
+[2016.04.21-19.48.37:393][  0]LogHMD: SteamVR failed to initialize.  Err: 110
+[2016.04.21-19.48.37:577][  0]LogAIModule: Creating AISystem for world NewWorld
+[2016.04.21-19.48.37:582][  0]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-19.48.37:697][  0]LogInit: FAudioDevice initialized.
+[2016.04.21-19.48.37:719][  0]LogDerivedDataCache: Saved boot cache 0.02s 43MB C:/Users/David/AppData/Local/UnrealEngine/4.10/DerivedDataCache/Boot.ddc.
+[2016.04.21-19.48.37:724][  0]LogInit: Texture streaming: Enabled
+[2016.04.21-19.48.37:729][  0]LogAnalytics: Creating configured Analytics provider AnalyticsET
+[2016.04.21-19.48.37:729][  0]LogAnalytics: [UEEditor.Rocket.Release] APIServer = http://et2.epicgames.com/ET2/. AppVersion = 4.10.2-2818068+++depot+UE4-Releases+4.10
+[2016.04.21-19.48.37:729][  0]LogAnalytics: [UEEditor.Rocket.Release] SetUserId f3fd65ed42405c16483d24826775683a|859fd02483094003b2ff534449d086e1|f7dbdf05-1b9e-457e-a434-53e302263073
+[2016.04.21-19.48.37:730][  0]LogAnalytics: [UEEditor.Rocket.Release] AnalyticsET::StartSession
+[2016.04.21-19.48.37:741][  0]LogInit: Transaction tracking system initialized
+[2016.04.21-19.48.37:768][  0]BlueprintLog: New page: Editor Load
+[2016.04.21-19.48.38:051][  0]LocalizationService: Info Localization service is disabled
+[2016.04.21-19.48.38:346][  0]LogConsoleResponse:Display: 
+[2016.04.21-19.48.38:621][  0]LogCook:Display: Done creating registry. It took  0.00s.
+[2016.04.21-19.48.39:053][  0]LogFileCache: Scanning file cache for directory 'C:/Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/' took 0.02s
+[2016.04.21-19.48.39:053][  0]SourceControl: Info Source control is disabled
+[2016.04.21-19.48.39:053][  0]Cmd: MAP LOAD FILE="../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2016.04.21-19.48.39:053][  0]LogEditorServer:Warning: Can't find file '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap'
+[2016.04.21-19.48.39:054][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2016.04.21-19.48.39:092][  0]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 38.097ms to complete.
+[2016.04.21-19.48.39:092][  0]LogFileHelpers: Loading map 'ThirdPersonExampleMap' took 0.038
+[2016.04.21-19.48.39:263][  0]LogCollectionManager: Loaded 0 collections in 0.002074 seconds
+[2016.04.21-19.48.39:302][  0]LogFileCache: Scanning file cache for directory 'C:/Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Collections/' took 0.01s
+[2016.04.21-19.48.39:302][  0]LogFileCache: Scanning file cache for directory 'C:/Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Developers/David/Collections/' took 0.01s
+[2016.04.21-19.48.39:302][  0]LogFileCache: Scanning file cache for directory 'C:/Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Collections/' took 0.01s
+[2016.04.21-19.48.39:302][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000002 seconds
+[2016.04.21-19.48.39:309][  0]LogContentBrowser: Native class hierarchy populated in 0.0073 seconds. Added 1895 classes and 340 folders.
+[2016.04.21-19.48.39:316][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0012 seconds. Added 0 classes and 0 folders.
+[2016.04.21-19.48.41:101][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0016 seconds. Added 0 classes and 0 folders.
+[2016.04.21-19.48.41:110][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0012 seconds. Added 1 classes and 2 folders.
+[2016.04.21-19.48.41:126][  0]LogCrashTracker: Crashtracker disabled due to settings.
+[2016.04.21-19.48.41:148][  0]LogUObjectGlobals:Warning: Failed to find object 'Class None.'
+[2016.04.21-19.48.41:170][  0]LogLoad: Full Startup: 43.27 seconds (BP compile: 0.13 seconds)
+[2016.04.21-19.48.41:512][  0]LogOcInput: Can't find Oculus library dev build: is proper Runtime installed? Version: 0.8.0.0
+[2016.04.21-19.48.41:638][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2016.04.21-19.48.41:980][  2]LogRenderer: Reallocating scene render targets to support 1076x568 (Frame:2).
+[2016.04.21-19.48.58:846][ 52]LogAssetRegistry: Asset discovery search completed in 23.0356 seconds
+[2016.04.21-19.48.58:846][ 52]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000001 seconds (found 0 objects)
+[2016.04.21-19.48.58:846][ 52]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000022 seconds (updated 0 objects)
+[2016.04.21-19.49.37:940][673]LogLinker:Warning: Asset '../../../Engine/Content/ArtTools/RenderToTexture/Macros/RenderToTextureMacros.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2016.04.21-19.49.38:900][673]LogContentBrowser: Native class hierarchy updated for 'BlueprintGraph' in 0.0034 seconds. Added 107 classes and 0 folders.
+[2016.04.21-19.49.43:856][848]LogRenderer: Reallocating scene render targets to support 1308x704 (Frame:2109).
+[2016.04.21-19.51.55:393][507]LogSkeletalMesh: InitArticulated: Bodies already created (/Engine/Transient.DebugSkelMeshComponent_0) - call TermArticulated first.
+[2016.04.21-19.51.55:717][508]LogRenderer: Reallocating scene render targets to support 1308x868 (Frame:12662).
+[2016.04.21-19.52.14:975][571]LogContentBrowser: Native class hierarchy updated for 'PhAT' in 0.0019 seconds. Added 1 classes and 2 folders.
+[2016.04.21-19.52.15:231][572]LogRenderer: Reallocating scene render targets to support 1524x888 (Frame:14914).
+[2016.04.21-19.52.38:626][951]LogRenderer: Reallocating scene render targets to support 1696x888 (Frame:17586).
+[2016.04.21-19.54.54:930][859]LogSkeletalMesh: InitArticulated: Bodies already created (/Engine/Transient.DebugSkelMeshComponent_1) - call TermArticulated first.
+[2016.04.21-19.58.36:343][342]LogContentBrowser:Verbose: The majority of assets in the view are of type: AnimSequence
+[2016.04.21-19.58.36:417][344]LogRenderer: Reallocating scene render targets to support 1696x904 (Frame:53337).
+[2016.04.21-20.00.10:328][485]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.00.10:377][485]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159FAE40C20
+[2016.04.21-20.00.10:379][485]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159821BAF20
+[2016.04.21-20.00.10:380][485]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015981BF25C0
+[2016.04.21-20.00.10:381][485]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001599514A480
+[2016.04.21-20.00.10:382][485]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015995149440
+[2016.04.21-20.00.10:404][485]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015982EED3A0
+[2016.04.21-20.00.10:405][485]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015982581080
+[2016.04.21-20.00.10:407][485]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015982AD1DA0
+[2016.04.21-20.00.10:408][485]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015982E62D40
+[2016.04.21-20.00.10:417][485]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_0' took 0.089
+[2016.04.21-20.00.10:456][485]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/ThirdPersonCPP/Blueprints/ThirdPersonCharacter] ([1] browsable assets)...
+[2016.04.21-20.00.10:509][485]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.ThirdPersonCharacter]
+[2016.04.21-20.00.10:509][485]OBJ SavePackage: Finished generating thumbnails for package [/Game/ThirdPersonCPP/Blueprints/ThirdPersonCharacter]
+[2016.04.21-20.00.10:713][485]LogSavePackage: Save=152.949478ms
+[2016.04.21-20.00.10:713][485]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacter_Auto11D7CAD5646E7CE7A67FAE8ACC807B049.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Autosaves/Game/ThirdPersonCPP/Blueprints/ThirdPersonCharacter_Auto1.uasset'
+[2016.04.21-20.00.10:715][485]LogSavePackage: Total save time: 187.712502ms
+[2016.04.21-20.00.10:715][485]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Autosaves/Game/ThirdPersonCPP/Blueprints/ThirdPersonCharacter_Auto1.uasset
+[2016.04.21-20.00.10:721][485]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton] ([1] browsable assets)...
+[2016.04.21-20.00.10:721][485]OBJ SavePackage: Finished generating thumbnails for package [/Game/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton]
+[2016.04.21-20.00.10:736][485]LogSavePackage: Save=5.491454ms
+[2016.04.21-20.00.10:736][485]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Mixamo_Ganfault_Skeleton_Auto17AA71CE546E7E0CD337F2481A904D507.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Autosaves/Game/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton_Auto1.uasset'
+[2016.04.21-20.00.10:737][485]LogSavePackage: Total save time: 14.029242ms
+[2016.04.21-20.00.10:737][485]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Autosaves/Game/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton_Auto1.uasset
+[2016.04.21-20.00.10:741][485]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/MixamoAnimPack/Mixamo_Ganfault/Mesh/Mixamo_Ganfault_Aure] ([1] browsable assets)...
+[2016.04.21-20.00.10:760][485]OBJ SavePackage:     Rendered thumbnail for [SkeletalMesh /Game/MixamoAnimPack/Mixamo_Ganfault/Mesh/Mixamo_Ganfault_Aure.Mixamo_Ganfault_Aure]
+[2016.04.21-20.00.10:760][485]OBJ SavePackage: Finished generating thumbnails for package [/Game/MixamoAnimPack/Mixamo_Ganfault/Mesh/Mixamo_Ganfault_Aure]
+[2016.04.21-20.00.10:902][485]LogSavePackage: Save=130.376526ms
+[2016.04.21-20.00.10:902][485]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Mixamo_Ganfault_Aure_Auto120D77762452581631B05F2BEFACF6311.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Autosaves/Game/MixamoAnimPack/Mixamo_Ganfault/Mesh/Mixamo_Ganfault_Aure_Auto1.uasset'
+[2016.04.21-20.00.10:903][485]LogSavePackage: Total save time: 141.381543ms
+[2016.04.21-20.00.10:903][485]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Autosaves/Game/MixamoAnimPack/Mixamo_Ganfault/Mesh/Mixamo_Ganfault_Aure_Auto1.uasset
+[2016.04.21-20.00.10:903][485]LogFileHelpers: Auto-saving content packages took 0.467
+[2016.04.21-20.11.12:366][892]LogSavePackage: Save=57.657700ms
+[2016.04.21-20.11.12:367][892]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacterC52DD9C74CA2C65D0D6714A057E69EAD.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset'
+[2016.04.21-20.11.12:372][892]LogSavePackage: Total save time: 84.613625ms
+[2016.04.21-20.11.12:372][892]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset
+[2016.04.21-20.11.33:640][159]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.11.44:741][809]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_0) Not registered. Aborting.
+[2016.04.21-20.11.47:394][962]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_1) Not registered. Aborting.
+[2016.04.21-20.12.59:072][ 23]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_2) Not registered. Aborting.
+[2016.04.21-20.13.03:525][190]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_3) Not registered. Aborting.
+[2016.04.21-20.13.04:444][222]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_4) Not registered. Aborting.
+[2016.04.21-20.13.05:847][268]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_5) Not registered. Aborting.
+[2016.04.21-20.13.06:857][301]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_6) Not registered. Aborting.
+[2016.04.21-20.13.07:685][328]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_7) Not registered. Aborting.
+[2016.04.21-20.13.08:576][358]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_8) Not registered. Aborting.
+[2016.04.21-20.13.43:370][270]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_9) Not registered. Aborting.
+[2016.04.21-20.14.03:413][439]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_10) Not registered. Aborting.
+[2016.04.21-20.17.07:602][229]LogSavePackage: Save=51.973209ms
+[2016.04.21-20.17.07:602][229]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacter4BACB7454CA7735BC56557981685AEEF.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset'
+[2016.04.21-20.17.07:605][229]LogSavePackage: Total save time: 61.022207ms
+[2016.04.21-20.17.07:605][229]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset
+[2016.04.21-20.17.15:706][697]LogLinker:Warning: CreateExport: Failed to load Parent for BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.15:707][697]LogLinker:Warning: CreateExport: Failed to load Parent for BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.15:707][697]LogLinker:Warning: CreateExport: Failed to load Parent for BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.15:707][697]LogLinker:Warning: CreateExport: Failed to load Parent for BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.15:707][697]LogLinker:Warning: CreateExport: Failed to load Parent for BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.15:707][697]LogLinker:Warning: CreateExport: Failed to load Parent for BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.15:709][697]LogLinker:Warning: CreateExport: Failed to load Parent for BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.15:713][697]LogLinker:Warning: CreateExport: Failed to load Parent for BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.15:819][697]LogLinker:Warning: CreateExport: Failed to load Parent for BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.15:820][697]LogLinker:Warning: CreateExport: Failed to load Parent for BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.15:820][697]LogLinker:Warning: CreateExport: Failed to load Parent for BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.15:820][697]LogLinker:Warning: CreateExport: Failed to load Parent for BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.15:820][697]LogLinker:Warning: CreateExport: Failed to load Parent for BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.16:013][697]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.17.16:021][697]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_11) Not registered. Aborting.
+[2016.04.21-20.17.18:716][697]LogSavePackage: Save=4.228629ms
+[2016.04.21-20.17.18:716][697]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Mixamo_Ganfault_SkeletonEA2373834C1C2C2DE3F684A0F9E07D96.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton.uasset'
+[2016.04.21-20.17.18:720][697]LogSavePackage: Total save time: 14.033977ms
+[2016.04.21-20.17.18:720][697]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton.uasset
+[2016.04.21-20.17.18:776][697]LogSavePackage: Save=42.879211ms
+[2016.04.21-20.17.18:776][697]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Mixamo_Ganfault_Aure5642F75E450BE9DA88424C97800050BB.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Mesh/Mixamo_Ganfault_Aure.uasset'
+[2016.04.21-20.17.18:780][697]LogSavePackage: Total save time: 55.967353ms
+[2016.04.21-20.17.18:780][697]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Mesh/Mixamo_Ganfault_Aure.uasset
+[2016.04.21-20.17.18:782][697]Cmd: MAP LOAD FILE="../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2016.04.21-20.17.18:782][697]LightingResults: New page: Lighting Build
+[2016.04.21-20.17.18:787][697]LogContentBrowser: Native class hierarchy updated for 'StatsViewer' in 0.0013 seconds. Added 5 classes and 0 folders.
+[2016.04.21-20.17.18:805][697]LoadErrors: New page: Loading map: TutorialLevel.umap
+[2016.04.21-20.17.18:805][697]MapCheck: New page: Map Check
+[2016.04.21-20.17.18:805][697]LightingResults: New page: Lighting Build
+[2016.04.21-20.17.18:826][697]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159D585B420
+[2016.04.21-20.17.18:829][697]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015982AD09A0
+[2016.04.21-20.17.18:836][697]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2016.04.21-20.17.18:902][697]Cmd: MAP CHECKDEP NOCLEARLOG
+[2016.04.21-20.17.18:952][697]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 50.215ms to complete.
+[2016.04.21-20.17.18:952][697]LogFileHelpers: Loading map 'TutorialLevel' took 0.172
+[2016.04.21-20.17.18:964][697]LoadErrors:Warning: Warning CreateExport: Failed to load Outer for resource 'UserConstructionScript': BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.18:964][697]LoadErrors:Warning: Warning CreateExport: Failed to load Outer for resource 'DefaultSceneRoot_GEN_VARIABLE': BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.18:964][697]LoadErrors:Warning: Warning CreateExport: Failed to load Outer for resource 'SimpleConstructionScript_0': BlueprintGeneratedClass /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C
+[2016.04.21-20.17.18:964][697]LoadErrors:Warning: Warning CreateExport: Failed to load Outer for resource 'SCS_Node_0': SimpleConstructionScript /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.MyEnergyPickup_C:SimpleConstructionScript_0
+[2016.04.21-20.17.18:964][697]LoadErrors:Warning: Warning CreateExport: Failed to load Outer for resource 'PickupMesh': MyEnergyPickup_C /Game/Blueprint_Items/Energy_Pack/MyEnergyPickup.Default__MyEnergyPickup_C
+[2016.04.21-20.17.21:259][801]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.17.21:259][801]BlueprintLog: New page: Pre-Play auto-recompile
+[2016.04.21-20.17.21:266][801]LogPlayLevel: [PlayLevel] Compiling ThirdPersonCharacter before play...
+[2016.04.21-20.17.21:636][801]LogPlayLevel: PlayLevel: Blueprint regeneration took 377 ms (1 blueprints)
+[2016.04.21-20.17.21:661][801]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:17:21 AM)
+[2016.04.21-20.17.21:661][801]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.17.21:670][801]LogPlayLevel: PIE: StaticDuplicateObject took: (0.008897s)
+[2016.04.21-20.17.21:671][801]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.17.21:671][801]LogPlayLevel: PIE: World Init took: (0.000556s)
+[2016.04.21-20.17.21:671][801]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.009670s)
+[2016.04.21-20.17.21:696][801]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.17.21:704][801]LogInit: FAudioDevice initialized.
+[2016.04.21-20.17.21:777][801]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.17.21:779][801]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.17.21
+[2016.04.21-20.17.21:779][801]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.17.21:779][801]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.17.21:779][801]LogWorld: Bringing up level for play took: 0.001599
+[2016.04.21-20.17.21:786][801]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel 0.644
+[2016.04.21-20.17.21:786][801]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.17.29:621][271]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.17.29:696][271]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.17.29:757][272]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015A237459E0
+[2016.04.21-20.18.02:285][182]LogEditorTransaction: Undo Move Nodes
+[2016.04.21-20.21.26:952][ 81]LogSavePackage: Save=49.749943ms
+[2016.04.21-20.21.26:952][ 81]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacter31902A5D450BA6DAA6FE06A5364D91A3.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset'
+[2016.04.21-20.21.26:954][ 81]LogSavePackage: Total save time: 55.501539ms
+[2016.04.21-20.21.26:954][ 81]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset
+[2016.04.21-20.21.39:360][736]LogSkeletalMesh: InitArticulated: Bodies already created (/Engine/Transient.DebugSkelMeshComponent_3) - call TermArticulated first.
+[2016.04.21-20.22.00:356][913]LogSkeletalMesh: InitArticulated: Bodies already created (/Engine/Transient.DebugSkelMeshComponent_4) - call TermArticulated first.
+[2016.04.21-20.22.26:302][200]LogEditorTransaction: Undo Translate Socket
+[2016.04.21-20.22.58:188][738]LogSavePackage: Save=8.041184ms
+[2016.04.21-20.22.58:188][738]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Mixamo_Ganfault_SkeletonC27E81184B60EDDF7E72BB8CC3136D75.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton.uasset'
+[2016.04.21-20.22.58:193][738]LogSavePackage: Total save time: 40.650416ms
+[2016.04.21-20.22.58:193][738]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton.uasset
+[2016.04.21-20.23.09:912][380]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.23.13:730][602]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_12) Not registered. Aborting.
+[2016.04.21-20.23.16:189][748]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_13) Not registered. Aborting.
+[2016.04.21-20.23.32:176][585]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_14) Not registered. Aborting.
+[2016.04.21-20.23.37:413][744]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_15) Not registered. Aborting.
+[2016.04.21-20.23.39:362][803]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_16) Not registered. Aborting.
+[2016.04.21-20.23.42:511][898]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_17) Not registered. Aborting.
+[2016.04.21-20.24.09:769][363]LogEditorTransaction: Undo Modify Component(s)
+[2016.04.21-20.24.09:818][363]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_18) Not registered. Aborting.
+[2016.04.21-20.24.19:032][867]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.24.19:032][867]BlueprintLog: New page: Pre-Play auto-recompile
+[2016.04.21-20.24.19:035][867]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_19) Not registered. Aborting.
+[2016.04.21-20.24.19:039][867]LogPlayLevel: [PlayLevel] Compiling ThirdPersonCharacter before play...
+[2016.04.21-20.24.19:133][867]LogPlayLevel: PlayLevel: Blueprint regeneration took 100 ms (1 blueprints)
+[2016.04.21-20.24.19:166][867]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015994897A60
+[2016.04.21-20.24.19:168][867]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015994896CA0
+[2016.04.21-20.24.19:169][867]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015994896C00
+[2016.04.21-20.24.19:171][867]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159824C28E0
+[2016.04.21-20.24.19:173][867]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159B353E660
+[2016.04.21-20.24.19:180][867]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:24:19 AM)
+[2016.04.21-20.24.19:180][867]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.24.19:196][867]LogPlayLevel: PIE: StaticDuplicateObject took: (0.016181s)
+[2016.04.21-20.24.19:197][867]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.24.19:198][867]LogPlayLevel: PIE: World Init took: (0.001086s)
+[2016.04.21-20.24.19:198][867]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.017587s)
+[2016.04.21-20.24.19:235][867]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.24.19:246][867]LogInit: FAudioDevice initialized.
+[2016.04.21-20.24.19:287][867]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.24.19:291][867]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.24.19
+[2016.04.21-20.24.19:291][867]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.24.19:291][867]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.24.19:291][867]LogWorld: Bringing up level for play took: 0.002828
+[2016.04.21-20.24.19:333][867]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel 0.192
+[2016.04.21-20.24.19:334][867]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.24.56:242][  9]LogSavePackage: Save=50.066536ms
+[2016.04.21-20.24.56:242][  9]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacter9624B9A54CBB2F434F26E993067EBB52.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset'
+[2016.04.21-20.24.56:245][  9]LogSavePackage: Total save time: 60.104400ms
+[2016.04.21-20.24.56:245][  9]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset
+[2016.04.21-20.25.05:297][528]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.25.05:330][528]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.25.05:331][528]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.25.05:360][528]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015A2D018A40
+[2016.04.21-20.25.05:376][529]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015A0B64F380
+[2016.04.21-20.26.29:359][309]LogSavePackage: Save=50.067326ms
+[2016.04.21-20.26.29:359][309]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacterA9823F1443D8DB4E62A1D9BF7DD29E5D.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset'
+[2016.04.21-20.26.29:363][309]LogSavePackage: Total save time: 57.308339ms
+[2016.04.21-20.26.29:363][309]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset
+[2016.04.21-20.26.31:639][441]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.26.31:639][441]BlueprintLog: New page: Pre-Play auto-recompile
+[2016.04.21-20.26.31:640][441]LogPlayLevel: [PlayLevel] Compiling ThirdPersonCharacter before play...
+[2016.04.21-20.26.31:735][441]LogPlayLevel: PlayLevel: Blueprint regeneration took 95 ms (1 blueprints)
+[2016.04.21-20.26.31:735][441]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.26.31:758][441]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015982AD1300
+[2016.04.21-20.26.31:761][441]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:26:31 AM)
+[2016.04.21-20.26.31:761][441]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.26.31:770][441]LogPlayLevel: PIE: StaticDuplicateObject took: (0.009227s)
+[2016.04.21-20.26.31:771][441]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.26.31:771][441]LogPlayLevel: PIE: World Init took: (0.000767s)
+[2016.04.21-20.26.31:771][441]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.010214s)
+[2016.04.21-20.26.31:797][441]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.26.31:804][441]LogInit: FAudioDevice initialized.
+[2016.04.21-20.26.31:839][441]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.26.31:841][441]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.26.31
+[2016.04.21-20.26.31:841][441]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.26.31:841][441]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.26.31:842][441]LogWorld: Bringing up level for play took: 0.001675
+[2016.04.21-20.26.31:847][441]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel 0.705
+[2016.04.21-20.26.31:847][441]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.26.33:994][570]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.26.34:026][570]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.26.34:064][571]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159E38E63E0
+[2016.04.21-20.26.35:033][614]LogSavePackage: Save=140.281754ms
+[2016.04.21-20.26.35:033][614]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/TutorialLevel8627A570419704460BD0949C0598077A.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap'
+[2016.04.21-20.26.35:034][614]LogSavePackage: Total save time: 148.943491ms
+[2016.04.21-20.26.35:034][614]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap
+[2016.04.21-20.26.36:607][705]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.26.36:607][705]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.21-20.26.36:607][705]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:26:36 AM)
+[2016.04.21-20.26.36:607][705]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.26.36:620][705]LogPlayLevel: PIE: StaticDuplicateObject took: (0.012248s)
+[2016.04.21-20.26.36:621][705]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.26.36:621][705]LogPlayLevel: PIE: World Init took: (0.000959s)
+[2016.04.21-20.26.36:621][705]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.013492s)
+[2016.04.21-20.26.36:646][705]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015982F4B880
+[2016.04.21-20.26.36:647][705]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159B353CAE0
+[2016.04.21-20.26.36:653][705]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.26.36:659][705]LogInit: FAudioDevice initialized.
+[2016.04.21-20.26.36:691][705]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.26.36:693][705]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.26.36
+[2016.04.21-20.26.36:693][705]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.26.36:694][705]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.26.36:694][705]LogWorld: Bringing up level for play took: 0.001732
+[2016.04.21-20.26.36:699][705]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel -0.443
+[2016.04.21-20.26.36:699][705]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.26.45:717][246]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.26.45:754][246]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.26.45:787][246]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159FD666340
+[2016.04.21-20.26.53:051][658]LogSavePackage: Save=51.097244ms
+[2016.04.21-20.26.53:051][658]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacterFE18BE46498266E390E501AFD245851D.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset'
+[2016.04.21-20.26.53:054][658]LogSavePackage: Total save time: 57.555851ms
+[2016.04.21-20.26.53:054][658]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset
+[2016.04.21-20.26.54:763][756]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.26.54:763][756]BlueprintLog: New page: Pre-Play auto-recompile
+[2016.04.21-20.26.54:764][756]LogPlayLevel: [PlayLevel] Compiling ThirdPersonCharacter before play...
+[2016.04.21-20.26.54:813][756]LogPlayLevel: PlayLevel: Blueprint regeneration took 49 ms (1 blueprints)
+[2016.04.21-20.26.54:813][756]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.26.54:834][756]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159FD667A60
+[2016.04.21-20.26.54:838][756]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:26:54 AM)
+[2016.04.21-20.26.54:838][756]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.26.54:847][756]LogPlayLevel: PIE: StaticDuplicateObject took: (0.008914s)
+[2016.04.21-20.26.54:847][756]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.26.54:847][756]LogPlayLevel: PIE: World Init took: (0.000616s)
+[2016.04.21-20.26.54:847][756]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.009750s)
+[2016.04.21-20.26.54:874][756]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.26.54:881][756]LogInit: FAudioDevice initialized.
+[2016.04.21-20.26.54:913][756]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.26.54:916][756]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.26.54
+[2016.04.21-20.26.54:916][756]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.26.54:916][756]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.26.54:916][756]LogWorld: Bringing up level for play took: 0.001582
+[2016.04.21-20.26.54:921][756]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel -0.221
+[2016.04.21-20.26.54:921][756]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.26.56:666][861]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.26.56:724][861]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.26.56:782][862]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159FD665BC0
+[2016.04.21-20.28.16:322][522]LogSavePackage: Save=51.885574ms
+[2016.04.21-20.28.16:322][522]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacterD842D1994F8C21FA1E1835858FEF50B3.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset'
+[2016.04.21-20.28.16:325][522]LogSavePackage: Total save time: 58.841966ms
+[2016.04.21-20.28.16:325][522]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset
+[2016.04.21-20.28.23:744][962]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.28.23:766][962]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159A63185E0
+[2016.04.21-20.28.23:871][962]LogSavePackage: Save=99.270134ms
+[2016.04.21-20.28.23:871][962]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/TutorialLevel035951244EDC3F4EE4B235BD0AA8A2A3.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap'
+[2016.04.21-20.28.23:872][962]LogSavePackage: Total save time: 103.852857ms
+[2016.04.21-20.28.23:872][962]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap
+[2016.04.21-20.28.24:474][996]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.28.24:474][996]BlueprintLog: New page: Pre-Play auto-recompile
+[2016.04.21-20.28.24:475][996]LogPlayLevel: [PlayLevel] Compiling ThirdPersonCharacter before play...
+[2016.04.21-20.28.24:523][996]LogPlayLevel: PlayLevel: Blueprint regeneration took 49 ms (1 blueprints)
+[2016.04.21-20.28.24:547][996]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:28:24 AM)
+[2016.04.21-20.28.24:547][996]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.28.24:556][996]LogPlayLevel: PIE: StaticDuplicateObject took: (0.009471s)
+[2016.04.21-20.28.24:557][996]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.28.24:557][996]LogPlayLevel: PIE: World Init took: (0.000816s)
+[2016.04.21-20.28.24:557][996]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.010552s)
+[2016.04.21-20.28.24:584][996]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.28.24:591][996]LogInit: FAudioDevice initialized.
+[2016.04.21-20.28.24:628][996]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.28.24:630][996]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.28.24
+[2016.04.21-20.28.24:630][996]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.28.24:631][996]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.28.24:631][996]LogWorld: Bringing up level for play took: 0.001598
+[2016.04.21-20.28.24:636][996]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel -0.506
+[2016.04.21-20.28.24:636][996]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.28.30:130][326]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.28.30:167][326]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.28.30:228][327]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015A23746340
+[2016.04.21-20.30.02:370][760]LogSavePackage: Save=50.096142ms
+[2016.04.21-20.30.02:370][760]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacterEC2C188542AE9DC96A5691A92593B597.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset'
+[2016.04.21-20.30.02:372][760]LogSavePackage: Total save time: 60.307302ms
+[2016.04.21-20.30.02:372][760]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset
+[2016.04.21-20.30.06:307][995]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.30.06:436][995]LogSavePackage: Save=101.445244ms
+[2016.04.21-20.30.06:436][995]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/TutorialLevelC783847F4EA522AF65B882B2815324F6.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap'
+[2016.04.21-20.30.06:438][995]LogSavePackage: Total save time: 106.880642ms
+[2016.04.21-20.30.06:438][995]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap
+[2016.04.21-20.30.07:271][ 39]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.30.07:271][ 39]BlueprintLog: New page: Pre-Play auto-recompile
+[2016.04.21-20.30.07:277][ 39]LogPlayLevel: [PlayLevel] Compiling ThirdPersonCharacter before play...
+[2016.04.21-20.30.07:329][ 39]LogPlayLevel: PlayLevel: Blueprint regeneration took 58 ms (1 blueprints)
+[2016.04.21-20.30.07:353][ 39]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:30:07 AM)
+[2016.04.21-20.30.07:354][ 39]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.30.07:364][ 39]LogPlayLevel: PIE: StaticDuplicateObject took: (0.010024s)
+[2016.04.21-20.30.07:364][ 39]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.30.07:365][ 39]LogPlayLevel: PIE: World Init took: (0.000892s)
+[2016.04.21-20.30.07:365][ 39]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.011218s)
+[2016.04.21-20.30.07:392][ 39]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.30.07:399][ 39]LogInit: FAudioDevice initialized.
+[2016.04.21-20.30.07:432][ 39]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.30.07:435][ 39]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.30.07
+[2016.04.21-20.30.07:435][ 39]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.30.07:435][ 39]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.30.07:435][ 39]LogWorld: Bringing up level for play took: 0.001769
+[2016.04.21-20.30.07:441][ 39]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel 0.299
+[2016.04.21-20.30.07:441][ 39]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.30.15:669][533]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.30.15:702][533]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.30.15:702][533]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.30.15:742][534]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015A1D985E40
+[2016.04.21-20.30.32:035][446]LogSavePackage: Save=47.613125ms
+[2016.04.21-20.30.32:035][446]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacter6FE0CCAE4F92809042E4FA883F1BDB29.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset'
+[2016.04.21-20.30.32:036][446]LogSavePackage: Total save time: 52.634031ms
+[2016.04.21-20.30.32:036][446]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset
+[2016.04.21-20.30.35:954][677]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.30.35:954][677]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.21-20.30.35:954][677]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:30:35 AM)
+[2016.04.21-20.30.35:954][677]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.30.35:964][677]LogPlayLevel: PIE: StaticDuplicateObject took: (0.009868s)
+[2016.04.21-20.30.35:964][677]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.30.35:964][677]LogPlayLevel: PIE: World Init took: (0.000674s)
+[2016.04.21-20.30.35:965][677]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.010809s)
+[2016.04.21-20.30.35:965][677]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.30.35:986][677]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015982AD22A0
+[2016.04.21-20.30.35:991][677]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.30.35:997][677]LogInit: FAudioDevice initialized.
+[2016.04.21-20.30.36:032][677]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.30.36:035][677]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.30.36
+[2016.04.21-20.30.36:035][677]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.30.36:035][677]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.30.36:035][677]LogWorld: Bringing up level for play took: 0.001848
+[2016.04.21-20.30.36:040][677]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel 0.898
+[2016.04.21-20.30.36:041][677]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.30.39:734][899]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.30.39:773][899]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.30.39:802][899]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015A25145EE0
+[2016.04.21-20.31.28:118][160]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.31.30:337][283]LogSavePackage: Save=78.158180ms
+[2016.04.21-20.31.30:337][283]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacter13BD5BC14629A77FE7B388BE9A44C3A9.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset'
+[2016.04.21-20.31.30:342][283]LogSavePackage: Total save time: 88.815413ms
+[2016.04.21-20.31.30:342][283]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset
+[2016.04.21-20.31.35:216][568]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.31.35:216][568]BlueprintLog: New page: Pre-Play auto-recompile
+[2016.04.21-20.31.35:217][568]LogPlayLevel: [PlayLevel] Compiling ThirdPersonCharacter before play...
+[2016.04.21-20.31.35:283][568]LogPlayLevel: PlayLevel: Blueprint regeneration took 67 ms (1 blueprints)
+[2016.04.21-20.31.35:284][568]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_20) Not registered. Aborting.
+[2016.04.21-20.31.35:316][568]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:31:35 AM)
+[2016.04.21-20.31.35:316][568]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.31.35:330][568]LogPlayLevel: PIE: StaticDuplicateObject took: (0.013392s)
+[2016.04.21-20.31.35:331][568]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.31.35:331][568]LogPlayLevel: PIE: World Init took: (0.000943s)
+[2016.04.21-20.31.35:331][568]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.014647s)
+[2016.04.21-20.31.35:364][568]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.31.35:373][568]LogInit: FAudioDevice initialized.
+[2016.04.21-20.31.35:408][568]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.31.35:410][568]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.31.35
+[2016.04.21-20.31.35:411][568]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.31.35:411][568]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.31.35:411][568]LogWorld: Bringing up level for play took: 0.002008
+[2016.04.21-20.31.35:419][568]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel 0.277
+[2016.04.21-20.31.35:419][568]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.31.38:949][780]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.31.38:982][780]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.31.39:044][781]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015A4687BC40
+[2016.04.21-20.31.57:038][815]LogSavePackage: Save=48.928455ms
+[2016.04.21-20.31.57:038][815]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacterCF52B3664081773491D26FAF6F8F18F7.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset'
+[2016.04.21-20.31.57:041][815]LogSavePackage: Total save time: 55.218104ms
+[2016.04.21-20.31.57:041][815]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset
+[2016.04.21-20.32.25:095][479]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.33.23:846][987]LogEditorTransaction: Undo Delete current selection
+[2016.04.21-20.33.23:851][987]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_21) Not registered. Aborting.
+[2016.04.21-20.33.24:418][ 20]LogEditorTransaction: Undo Delete current selection
+[2016.04.21-20.33.24:422][ 20]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_22) Not registered. Aborting.
+[2016.04.21-20.33.25:669][ 94]LogEditorTransaction: Undo Move Nodes
+[2016.04.21-20.33.25:674][ 94]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_23) Not registered. Aborting.
+[2016.04.21-20.33.26:038][115]LogEditorTransaction: Undo Move Nodes
+[2016.04.21-20.33.26:042][115]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_24) Not registered. Aborting.
+[2016.04.21-20.33.26:339][132]LogEditorTransaction: Undo Move Nodes
+[2016.04.21-20.33.26:344][132]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_25) Not registered. Aborting.
+[2016.04.21-20.33.26:874][163]LogEditorTransaction: Undo Move Nodes
+[2016.04.21-20.33.26:879][163]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_26) Not registered. Aborting.
+[2016.04.21-20.33.27:693][211]LogEditorTransaction: Undo Move Nodes
+[2016.04.21-20.33.27:698][211]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_27) Not registered. Aborting.
+[2016.04.21-20.33.28:161][238]LogEditorTransaction: Undo Delete current selection
+[2016.04.21-20.33.28:191][238]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_28) Not registered. Aborting.
+[2016.04.21-20.33.28:888][279]LogEditorTransaction: Undo Delete current selection
+[2016.04.21-20.33.28:893][279]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_29) Not registered. Aborting.
+[2016.04.21-20.33.29:391][308]LogEditorTransaction: Undo Delete current selection
+[2016.04.21-20.33.29:402][308]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_30) Not registered. Aborting.
+[2016.04.21-20.34.36:037][249]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_31) Not registered. Aborting.
+[2016.04.21-20.36.10:426][827]LogSavePackage: Save=39.663921ms
+[2016.04.21-20.36.10:426][827]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacter74BB3B984F08E05259FC67B467FF6AF9.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset'
+[2016.04.21-20.36.10:428][827]LogSavePackage: Total save time: 49.677700ms
+[2016.04.21-20.36.10:428][827]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset
+[2016.04.21-20.36.13:421][  2]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.36.13:421][  2]BlueprintLog: New page: Pre-Play auto-recompile
+[2016.04.21-20.36.13:422][  2]LogPlayLevel: [PlayLevel] Compiling ThirdPersonCharacter before play...
+[2016.04.21-20.36.13:471][  2]LogPlayLevel: PlayLevel: Blueprint regeneration took 49 ms (1 blueprints)
+[2016.04.21-20.36.13:471][  2]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_32) Not registered. Aborting.
+[2016.04.21-20.36.13:502][  2]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:36:13 AM)
+[2016.04.21-20.36.13:502][  2]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.36.13:512][  2]LogPlayLevel: PIE: StaticDuplicateObject took: (0.009957s)
+[2016.04.21-20.36.13:513][  2]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.36.13:513][  2]LogPlayLevel: PIE: World Init took: (0.000788s)
+[2016.04.21-20.36.13:513][  2]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.011032s)
+[2016.04.21-20.36.13:538][  2]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.36.13:547][  2]LogInit: FAudioDevice initialized.
+[2016.04.21-20.36.13:583][  2]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.36.13:586][  2]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.36.13
+[2016.04.21-20.36.13:586][  2]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_9 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.36.13:586][  2]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_9 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.36.13:586][  2]LogWorld: Bringing up level for play took: 0.001695
+[2016.04.21-20.36.13:591][  2]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel 0.449
+[2016.04.21-20.36.13:591][  2]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.36.15:353][108]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.36.15:392][108]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.36.15:443][109]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015A6B447B00
+[2016.04.21-20.37.16:044][670]LogProperty:Warning: ObjectProperty /Script/Engine.EdGraphPin:LinkedTo.LinkedTo: unresolved reference to 'EdGraphPin'K2Node_VariableGet_305.EdGraphPin_28116''
+[2016.04.21-20.37.16:044][670]LogProperty:Warning: ObjectProperty /Script/Engine.EdGraphPin:LinkedTo.LinkedTo: unresolved reference to 'EdGraphPin'K2Node_CallFunction_2988.EdGraphPin_28169''
+[2016.04.21-20.37.16:055][670]LogProperty:Warning: ObjectProperty /Script/Engine.EdGraphPin:LinkedTo.LinkedTo: unresolved reference to 'EdGraphPin'K2Node_VariableGet_318.EdGraphPin_28173''
+[2016.04.21-20.37.26:432][283]LogSavePackage: Save=44.817463ms
+[2016.04.21-20.37.26:432][283]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacterE1E5991343108EB52CB0DEA3F1857FC4.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset'
+[2016.04.21-20.37.26:434][283]LogSavePackage: Total save time: 50.983161ms
+[2016.04.21-20.37.26:434][283]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset
+[2016.04.21-20.37.32:074][617]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.37.32:074][617]BlueprintLog: New page: Pre-Play auto-recompile
+[2016.04.21-20.37.32:074][617]LogPlayLevel: [PlayLevel] Compiling ThirdPersonCharacter before play...
+[2016.04.21-20.37.32:121][617]LogPlayLevel: PlayLevel: Blueprint regeneration took 47 ms (1 blueprints)
+[2016.04.21-20.37.32:121][617]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.37.32:144][617]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159AAD3E980
+[2016.04.21-20.37.32:147][617]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:37:32 AM)
+[2016.04.21-20.37.32:147][617]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.37.32:157][617]LogPlayLevel: PIE: StaticDuplicateObject took: (0.010210s)
+[2016.04.21-20.37.32:158][617]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.37.32:158][617]LogPlayLevel: PIE: World Init took: (0.000787s)
+[2016.04.21-20.37.32:158][617]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.011257s)
+[2016.04.21-20.37.32:183][617]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.37.32:190][617]LogInit: FAudioDevice initialized.
+[2016.04.21-20.37.32:220][617]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.37.32:223][617]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.37.32
+[2016.04.21-20.37.32:223][617]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.37.32:223][617]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.37.32:223][617]LogWorld: Bringing up level for play took: 0.001764
+[2016.04.21-20.37.32:229][617]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel 1.087
+[2016.04.21-20.37.32:229][617]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.37.37:507][934]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.37.37:541][934]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.37.37:603][935]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015A2D076DE0
+[2016.04.21-20.38.11:959][711]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.38.14:778][880]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_33) Not registered. Aborting.
+[2016.04.21-20.38.35:171][762]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_34) Not registered. Aborting.
+[2016.04.21-20.38.49:942][559]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_35) Not registered. Aborting.
+[2016.04.21-20.38.55:856][912]LogProperty:Warning: ObjectProperty /Script/Engine.EdGraphPin:LinkedTo.LinkedTo: unresolved reference to 'EdGraphPin'K2Node_VariableGet_320.EdGraphPin_28173''
+[2016.04.21-20.38.59:232][108]LogSavePackage: Save=45.224850ms
+[2016.04.21-20.38.59:232][108]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/ThirdPersonCharacterD73EEF754827A495B50C32B73D87A11D.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset'
+[2016.04.21-20.38.59:235][108]LogSavePackage: Total save time: 51.409893ms
+[2016.04.21-20.38.59:235][108]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset
+[2016.04.21-20.39.05:111][456]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharacterMovementComponent_36) Not registered. Aborting.
+[2016.04.21-20.39.05:244][456]LogSavePackage: Save=101.595253ms
+[2016.04.21-20.39.05:244][456]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/TutorialLevel1CACE9F543515520A88F5E8A73707777.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap'
+[2016.04.21-20.39.05:246][456]LogSavePackage: Total save time: 110.897284ms
+[2016.04.21-20.39.05:246][456]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap
+[2016.04.21-20.39.06:062][503]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.39.06:062][503]BlueprintLog: New page: Pre-Play auto-recompile
+[2016.04.21-20.39.06:063][503]LogPlayLevel: [PlayLevel] Compiling ThirdPersonCharacter before play...
+[2016.04.21-20.39.06:118][503]LogPlayLevel: PlayLevel: Blueprint regeneration took 55 ms (1 blueprints)
+[2016.04.21-20.39.06:140][503]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015A43730400
+[2016.04.21-20.39.06:141][503]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015A2D0F6700
+[2016.04.21-20.39.06:142][503]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015982548B80
+[2016.04.21-20.39.06:146][503]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:39:06 AM)
+[2016.04.21-20.39.06:146][503]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.39.06:156][503]LogPlayLevel: PIE: StaticDuplicateObject took: (0.009345s)
+[2016.04.21-20.39.06:156][503]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.39.06:156][503]LogPlayLevel: PIE: World Init took: (0.000815s)
+[2016.04.21-20.39.06:157][503]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.010443s)
+[2016.04.21-20.39.06:181][503]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.39.06:187][503]LogInit: FAudioDevice initialized.
+[2016.04.21-20.39.06:220][503]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.39.06:222][503]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.39.06
+[2016.04.21-20.39.06:223][503]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_11 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.39.06:223][503]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_11 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.39.06:223][503]LogWorld: Bringing up level for play took: 0.001611
+[2016.04.21-20.39.06:228][503]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel 1.086
+[2016.04.21-20.39.06:228][503]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.39.09:815][718]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.39.09:849][718]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.39.09:887][719]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015A23744EA0
+[2016.04.21-20.39.36:636][227]LogSkeletalMesh: InitArticulated: Bodies already created (/Engine/Transient.DebugSkelMeshComponent_5) - call TermArticulated first.
+[2016.04.21-20.39.59:320][452]LogSavePackage: Save=4.278368ms
+[2016.04.21-20.39.59:320][452]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Mixamo_Ganfault_Skeleton3A0CDB8742B6F1053E2E079D67477FEA.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton.uasset'
+[2016.04.21-20.39.59:322][452]LogSavePackage: Total save time: 13.100773ms
+[2016.04.21-20.39.59:322][452]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton.uasset
+[2016.04.21-20.40.04:240][668]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.04.21-20.40.04:267][668]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001598254A3E0
+[2016.04.21-20.40.04:393][668]LogSavePackage: Save=119.925751ms
+[2016.04.21-20.40.04:393][668]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/TutorialLevelE9BDD5814F30E8262B50F1A4C6A89E98.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap'
+[2016.04.21-20.40.04:394][668]LogSavePackage: Total save time: 124.896523ms
+[2016.04.21-20.40.04:394][668]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap
+[2016.04.21-20.40.06:050][765]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.40.06:050][765]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.21-20.40.06:050][765]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:40:06 AM)
+[2016.04.21-20.40.06:051][765]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.40.06:061][765]LogPlayLevel: PIE: StaticDuplicateObject took: (0.010083s)
+[2016.04.21-20.40.06:061][765]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.40.06:061][765]LogPlayLevel: PIE: World Init took: (0.000669s)
+[2016.04.21-20.40.06:062][765]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.010992s)
+[2016.04.21-20.40.06:089][765]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.40.06:095][765]LogInit: FAudioDevice initialized.
+[2016.04.21-20.40.06:132][765]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.40.06:135][765]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.40.06
+[2016.04.21-20.40.06:135][765]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_12 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.40.06:135][765]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_12 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.40.06:136][765]LogWorld: Bringing up level for play took: 0.002311
+[2016.04.21-20.40.06:142][765]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel 1.001
+[2016.04.21-20.40.06:142][765]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.40.13:224][190]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.40.13:258][190]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.40.13:291][190]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015A24C9DA80
+[2016.04.21-20.40.20:613][531]LogSavePackage: Save=5.501718ms
+[2016.04.21-20.40.20:613][531]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Mixamo_Ganfault_SkeletonA2EEE6D94B1ED28AB496D1913A2734E0.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton.uasset'
+[2016.04.21-20.40.20:616][531]LogSavePackage: Total save time: 13.964895ms
+[2016.04.21-20.40.20:616][531]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton.uasset
+[2016.04.21-20.40.22:971][659]LogSavePackage: Save=104.683029ms
+[2016.04.21-20.40.22:971][659]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/TutorialLevelD566331244293637A06F2FB2D5754762.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap'
+[2016.04.21-20.40.22:973][659]LogSavePackage: Total save time: 111.143216ms
+[2016.04.21-20.40.22:973][659]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap
+[2016.04.21-20.40.23:395][682]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.40.23:395][682]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.21-20.40.23:395][682]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:40:23 AM)
+[2016.04.21-20.40.23:395][682]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.40.23:404][682]LogPlayLevel: PIE: StaticDuplicateObject took: (0.009714s)
+[2016.04.21-20.40.23:405][682]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.40.23:405][682]LogPlayLevel: PIE: World Init took: (0.000722s)
+[2016.04.21-20.40.23:406][682]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.010722s)
+[2016.04.21-20.40.23:431][682]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.40.23:438][682]LogInit: FAudioDevice initialized.
+[2016.04.21-20.40.23:473][682]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.40.23:475][682]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.40.23
+[2016.04.21-20.40.23:475][682]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_13 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.40.23:475][682]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_13 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.40.23:475][682]LogWorld: Bringing up level for play took: 0.001840
+[2016.04.21-20.40.23:481][682]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel 0.339
+[2016.04.21-20.40.23:481][682]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.40.33:494][283]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.40.33:531][283]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.40.33:554][283]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159F90CE840
+[2016.04.21-20.40.45:723][888]LogSavePackage: Save=83.926353ms
+[2016.04.21-20.40.45:723][888]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Mixamo_Ganfault_Skeleton365F25724003D6D8FBAFD69BD45C044D.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton.uasset'
+[2016.04.21-20.40.45:728][888]LogSavePackage: Total save time: 92.972986ms
+[2016.04.21-20.40.45:728][888]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton.uasset
+[2016.04.21-20.40.49:147][ 71]LogSavePackage: Save=125.018898ms
+[2016.04.21-20.40.49:147][ 71]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/TutorialLevel84852213470D7C1FD24ED2A042688050.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap'
+[2016.04.21-20.40.49:150][ 71]LogSavePackage: Total save time: 132.099248ms
+[2016.04.21-20.40.49:150][ 71]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap
+[2016.04.21-20.40.49:611][ 96]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.40.49:611][ 96]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.21-20.40.49:612][ 96]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:40:49 AM)
+[2016.04.21-20.40.49:612][ 96]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.40.49:624][ 96]LogPlayLevel: PIE: StaticDuplicateObject took: (0.012572s)
+[2016.04.21-20.40.49:625][ 96]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.40.49:625][ 96]LogPlayLevel: PIE: World Init took: (0.001074s)
+[2016.04.21-20.40.49:626][ 96]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.014040s)
+[2016.04.21-20.40.49:656][ 96]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.40.49:665][ 96]LogInit: FAudioDevice initialized.
+[2016.04.21-20.40.49:700][ 96]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.40.49:703][ 96]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.40.49
+[2016.04.21-20.40.49:703][ 96]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_14 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.40.49:703][ 96]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_14 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.40.49:703][ 96]LogWorld: Bringing up level for play took: 0.001624
+[2016.04.21-20.40.49:709][ 96]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel 0.567
+[2016.04.21-20.40.49:709][ 96]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.40.54:804][402]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.40.54:840][402]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.40.54:864][402]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159C8E99300
+[2016.04.21-20.41.04:541][875]LogSavePackage: Save=5.223809ms
+[2016.04.21-20.41.04:541][875]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Mixamo_Ganfault_Skeleton5AB839AF40CBAA6E4722DFB4C5AB5C51.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton.uasset'
+[2016.04.21-20.41.04:543][875]LogSavePackage: Total save time: 12.419820ms
+[2016.04.21-20.41.04:544][875]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton.uasset
+[2016.04.21-20.41.08:901][ 79]LogSavePackage: Save=103.078346ms
+[2016.04.21-20.41.08:901][ 79]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/TutorialLevel2634B8AD438908D1148076A62A865EB0.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap'
+[2016.04.21-20.41.08:903][ 79]LogSavePackage: Total save time: 109.661698ms
+[2016.04.21-20.41.08:903][ 79]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/Rooms/TutorialLevel.umap
+[2016.04.21-20.41.09:848][130]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.41.09:848][130]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.21-20.41.09:848][130]PIE: New page: PIE session: TutorialLevel (Apr 21, 2016, 6:41:09 AM)
+[2016.04.21-20.41.09:848][130]LogPlayLevel: Creating play world package: /Game/Rooms/UEDPIE_0_TutorialLevel
+[2016.04.21-20.41.09:858][130]LogPlayLevel: PIE: StaticDuplicateObject took: (0.009921s)
+[2016.04.21-20.41.09:859][130]LogAIModule: Creating AISystem for world TutorialLevel
+[2016.04.21-20.41.09:859][130]LogPlayLevel: PIE: World Init took: (0.001123s)
+[2016.04.21-20.41.09:860][130]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Rooms/TutorialLevel.TutorialLevel to /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel (0.011357s)
+[2016.04.21-20.41.09:890][130]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.21-20.41.09:896][130]LogInit: FAudioDevice initialized.
+[2016.04.21-20.41.09:933][130]LogWorld: Game class is 'Maze_Of_DoomGameMode'
+[2016.04.21-20.41.09:935][130]LogWorld: Bringing World /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel up for play (max tick rate 60) at 2016.04.21-13.41.09
+[2016.04.21-20.41.09:935][130]LogActor:Warning: GameSession /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameSession_15 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.41.09:936][130]LogActor:Warning: GameNetworkManager /Game/Rooms/UEDPIE_0_TutorialLevel.TutorialLevel:PersistentLevel.GameNetworkManager_15 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-20.41.09:936][130]LogWorld: Bringing up level for play took: 0.002078
+[2016.04.21-20.41.09:942][130]PIE: Info Play in editor start time for /Game/Rooms/UEDPIE_0_TutorialLevel 0.8
+[2016.04.21-20.41.09:942][130]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.41.17:588][589]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.41.17:624][589]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel' has LevelScriptBlueprint '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel' with GeneratedClass '/Game/Rooms/TutorialLevel.TutorialLevel_C' with ClassGeneratedBy '/Game/Rooms/TutorialLevel.TutorialLevel:PersistentLevel.TutorialLevel'
+[2016.04.21-20.41.17:648][589]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159C8E98D60
+[2016.04.21-20.41.24:770][908]LogSavePackage: Save=4.255867ms
+[2016.04.21-20.41.24:770][908]LogSavePackage: Moving '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Saved/Mixamo_Ganfault_Skeleton45C45A954DD6B188B888D8BA604A1944.tmp' to '../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton.uasset'
+[2016.04.21-20.41.24:773][908]LogSavePackage: Total save time: 10.683682ms
+[2016.04.21-20.41.24:773][908]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/David/Desktop/ASU/SER432/Group2/Maze_Of_Doom/Content/MixamoAnimPack/Mixamo_Ganfault/Anims/Mixamo_Ganfault_Skeleton.uasset
+[2016.04.21-20.41.27:678][ 74]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159F908B2E0
+[2016.04.21-20.41.27:793][ 74]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159F908B100
+[2016.04.21-20.41.27:980][ 75]Cmd: QUIT_EDITOR
+[2016.04.21-20.41.28:810][ 75]LogWindowsTextInputMethodSystem:Display: IME system now deactivated.
+[2016.04.21-20.41.28:818][ 75]LogWindowsTextInputMethodSystem:Display: IME system now deactivated.
+[2016.04.21-20.41.28:895][ 75]LogExit: Preparing to exit.
+[2016.04.21-20.41.30:079][ 75]LogExit: Editor shut down
+[2016.04.21-20.41.30:079][ 75]LogExit: Transaction tracking system shut down
+[2016.04.21-20.41.30:080][ 75]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159DDCD71A0
+[2016.04.21-20.41.30:080][ 75]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159D4E8F100
+[2016.04.21-20.41.30:084][ 75]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159948E6340
+[2016.04.21-20.41.30:084][ 75]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015994894D60
+[2016.04.21-20.41.30:084][ 75]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015982EEF4C0
+[2016.04.21-20.41.30:085][ 75]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015982EEFCE0
+[2016.04.21-20.41.30:085][ 75]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000015983B827A0
+[2016.04.21-20.41.30:085][ 75]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159D4A2DB20
+[2016.04.21-20.41.30:086][ 75]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000159D4A2E3E0
+[2016.04.21-20.41.30:240][ 75]LogExit: Object subsystem successfully closed.
+[2016.04.21-20.41.30:256][ 75]LogD3D11RHI: Shutdown
+[2016.04.21-20.41.30:256][ 75]LogD3D11RHI: CleanupD3DDevice
+[2016.04.21-20.41.30:333][ 75]LogD3D11RHI: ~FD3D11DynamicRHI
+[2016.04.21-20.41.30:345][ 75]LogModuleManager: Shutting down and abandoning module StatsViewer (202)
+[2016.04.21-20.41.30:345][ 75]LogModuleManager: Shutting down and abandoning module CookingStats (201)
+[2016.04.21-20.41.30:345][ 75]LogModuleManager: Shutting down and abandoning module PhAT (200)
+[2016.04.21-20.41.30:345][ 75]LogModuleManager: Shutting down and abandoning module BlueprintGraph (199)
+[2016.04.21-20.41.30:345][ 75]LogModuleManager: Shutting down and abandoning module CrashTracker (198)
+[2016.04.21-20.41.30:345][ 75]LogModuleManager: Shutting down and abandoning module SceneOutliner (197)
+[2016.04.21-20.41.30:345][ 75]LogModuleManager: Shutting down and abandoning module SuperSearch (196)
+[2016.04.21-20.41.30:345][ 75]LogModuleManager: Shutting down and abandoning module WidgetCarousel (195)
+[2016.04.21-20.41.30:345][ 75]LogModuleManager: Shutting down and abandoning module AddContentDialog (194)
+[2016.04.21-20.41.30:346][ 75]LogModuleManager: Shutting down and abandoning module EditorWidgets (193)
+[2016.04.21-20.41.30:346][ 75]LogModuleManager: Shutting down and abandoning module CollectionManager (192)
+[2016.04.21-20.41.30:346][ 75]LogModuleManager: Shutting down and abandoning module FoliageEdit (191)
+[2016.04.21-20.41.30:346][ 75]LogModuleManager: Shutting down and abandoning module LandscapeEditor (190)
+[2016.04.21-20.41.30:346][ 75]LogModuleManager: Shutting down and abandoning module ActorPickerMode (189)
+[2016.04.21-20.41.30:346][ 75]LogModuleManager: Shutting down and abandoning module GeometryMode (188)
+[2016.04.21-20.41.30:346][ 75]LogModuleManager: Shutting down and abandoning module TextureAlignMode (187)
+[2016.04.21-20.41.30:346][ 75]LogModuleManager: Shutting down and abandoning module BspMode (186)
+[2016.04.21-20.41.30:346][ 75]LogModuleManager: Shutting down and abandoning module PlacementMode (185)
+[2016.04.21-20.41.30:346][ 75]LogModuleManager: Shutting down and abandoning module AutomationWorker (184)
+[2016.04.21-20.41.30:346][ 75]LogModuleManager: Shutting down and abandoning module CharacterAI (183)
+[2016.04.21-20.41.30:346][ 75]LogModuleManager: Shutting down and abandoning module SmartSnapping (182)
+[2016.04.21-20.41.30:346][ 75]LogModuleManager: Shutting down and abandoning module ViewportSnapping (181)
+[2016.04.21-20.41.30:347][ 75]LogModuleManager: Shutting down and abandoning module LogVisualizer (180)
+[2016.04.21-20.41.30:347][ 75]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (179)
+[2016.04.21-20.41.30:347][ 75]LogModuleManager: Shutting down and abandoning module IntroTutorials (178)
+[2016.04.21-20.41.30:347][ 75]LogModuleManager: Shutting down and abandoning module EditorLiveStreaming (177)
+[2016.04.21-20.41.30:347][ 75]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (176)
+[2016.04.21-20.41.30:347][ 75]LogModuleManager: Shutting down and abandoning module HTML5PlatformEditor (175)
+[2016.04.21-20.41.30:347][ 75]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (174)
+[2016.04.21-20.41.30:995][ 75]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (173)
+[2016.04.21-20.41.30:995][ 75]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (172)
+[2016.04.21-20.41.30:995][ 75]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (171)
+[2016.04.21-20.41.30:995][ 75]LogModuleManager: Shutting down and abandoning module MergeActors (170)
+[2016.04.21-20.41.30:995][ 75]LogModuleManager: Shutting down and abandoning module SizeMap (169)
+[2016.04.21-20.41.30:995][ 75]LogModuleManager: Shutting down and abandoning module TreeMap (168)
+[2016.04.21-20.41.30:995][ 75]LogModuleManager: Shutting down and abandoning module ReferenceViewer (167)
+[2016.04.21-20.41.30:995][ 75]LogModuleManager: Shutting down and abandoning module LocalizationService (166)
+[2016.04.21-20.41.30:995][ 75]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (165)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module HardwareTargeting (164)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (163)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module UndoHistory (162)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (161)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module UserFeedback (160)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module XmlParser (159)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module Blutility (158)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (157)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (156)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module InputBindingEditor (155)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (154)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module SettingsEditor (153)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module ProjectLauncher (152)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module SessionFrontend (151)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module ProfilerClient (150)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module TargetDeviceServices (149)
+[2016.04.21-20.41.30:996][ 75]LogModuleManager: Shutting down and abandoning module DeviceManager (148)
+[2016.04.21-20.41.30:997][ 75]LogModuleManager: Shutting down and abandoning module AutomationController (147)
+[2016.04.21-20.41.30:997][ 75]LogModuleManager: Shutting down and abandoning module AutomationWindow (146)
+[2016.04.21-20.41.30:997][ 75]LogModuleManager: Shutting down and abandoning module Layers (145)
+[2016.04.21-20.41.30:997][ 75]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (144)
+[2016.04.21-20.41.30:997][ 75]LogModuleManager: Shutting down and abandoning module DetailCustomizations (143)
+[2016.04.21-20.41.30:997][ 75]LogModuleManager: Shutting down and abandoning module PackagesDialog (142)
+[2016.04.21-20.41.30:997][ 75]LogModuleManager: Shutting down and abandoning module Persona (141)
+[2016.04.21-20.41.30:997][ 75]LogModuleManager: Shutting down and abandoning module Kismet (140)
+[2016.04.21-20.41.30:997][ 75]LogModuleManager: Shutting down and abandoning module GraphEditor (139)
+[2016.04.21-20.41.30:997][ 75]LogModuleManager: Shutting down and abandoning module ClassViewer (138)
+[2016.04.21-20.41.31:000][ 75]LogModuleManager: Shutting down and abandoning module Toolbox (137)
+[2016.04.21-20.41.31:000][ 75]LogModuleManager: Shutting down and abandoning module ModuleUI (136)
+[2016.04.21-20.41.31:000][ 75]LogModuleManager: Shutting down and abandoning module MovieSceneTools (135)
+[2016.04.21-20.41.31:000][ 75]LogModuleManager: Shutting down and abandoning module OutputLog (134)
+[2016.04.21-20.41.31:000][ 75]LogModuleManager: Shutting down and abandoning module GammaUI (133)
+[2016.04.21-20.41.31:000][ 75]LogModuleManager: Shutting down and abandoning module Documentation (132)
+[2016.04.21-20.41.31:000][ 75]LogModuleManager: Shutting down and abandoning module GameLiveStreaming (131)
+[2016.04.21-20.41.31:000][ 75]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (130)
+[2016.04.21-20.41.31:000][ 75]LogModuleManager: Shutting down and abandoning module AnalyticsET (129)
+[2016.04.21-20.41.31:000][ 75]LogModuleManager: Shutting down and abandoning module Analytics (128)
+[2016.04.21-20.41.31:000][ 75]LogModuleManager: Shutting down and abandoning module AITestSuite (127)
+[2016.04.21-20.41.31:000][ 75]LogModuleManager: Shutting down and abandoning module GameplayDebugger (126)
+[2016.04.21-20.41.31:000][ 75]LogModuleManager: Shutting down and abandoning module AIModule (125)
+[2016.04.21-20.41.31:000][ 75]LogModuleManager: Shutting down and abandoning module ProfilerService (124)
+[2016.04.21-20.41.31:183][ 75]LogModuleManager: Shutting down and abandoning module TaskGraph (123)
+[2016.04.21-20.41.31:183][ 75]LogModuleManager: Shutting down and abandoning module SlateRemote (122)
+[2016.04.21-20.41.31:183][ 75]LogModuleManager: Shutting down and abandoning module SteamVRController (121)
+[2016.04.21-20.41.31:183][ 75]LogModuleManager: Shutting down and abandoning module SteamVR (120)
+[2016.04.21-20.41.31:183][ 75]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (119)
+[2016.04.21-20.41.31:183][ 75]LogModuleManager: Shutting down and abandoning module OculusLibrary (118)
+[2016.04.21-20.41.31:183][ 75]LogModuleManager: Shutting down and abandoning module OculusInput (117)
+[2016.04.21-20.41.31:183][ 75]LogModuleManager: Shutting down and abandoning module LeapMotionController (116)
+[2016.04.21-20.41.31:226][ 75]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (115)
+[2016.04.21-20.41.31:226][ 75]LogModuleManager: Shutting down and abandoning module CableComponent (114)
+[2016.04.21-20.41.31:226][ 75]LogModuleManager: Shutting down and abandoning module ArchVisCharacter (113)
+[2016.04.21-20.41.31:226][ 75]LogModuleManager: Shutting down and abandoning module MessagingDebugger (112)
+[2016.04.21-20.41.31:226][ 75]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (111)
+[2016.04.21-20.41.31:226][ 75]LogModuleManager: Shutting down and abandoning module HTML5Networking (110)
+[2016.04.21-20.41.31:226][ 75]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (109)
+[2016.04.21-20.41.31:226][ 75]LogModuleManager: Shutting down and abandoning module PluginBrowser (108)
+[2016.04.21-20.41.31:226][ 75]LogModuleManager: Shutting down and abandoning module EpicSurvey (107)
+[2016.04.21-20.41.31:226][ 75]LogModuleManager: Shutting down and abandoning module DesktopPlatform (106)
+[2016.04.21-20.41.31:226][ 75]LogModuleManager: Shutting down and abandoning module VisualStudioSourceCodeAccess (105)
+[2016.04.21-20.41.31:227][ 75]LogModuleManager: Shutting down and abandoning module UObjectPlugin (104)
+[2016.04.21-20.41.31:227][ 75]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (103)
+[2016.04.21-20.41.31:227][ 75]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (102)
+[2016.04.21-20.41.31:227][ 75]LogModuleManager: Shutting down and abandoning module SourceControl (101)
+[2016.04.21-20.41.31:227][ 75]LogModuleManager: Shutting down and abandoning module GitSourceControl (100)
+[2016.04.21-20.41.31:227][ 75]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeEditor (99)
+[2016.04.21-20.41.31:227][ 75]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (98)
+[2016.04.21-20.41.31:227][ 75]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (97)
+[2016.04.21-20.41.31:227][ 75]LogModuleManager: Shutting down and abandoning module MeshPaint (96)
+[2016.04.21-20.41.31:227][ 75]LogModuleManager: Shutting down and abandoning module SlateReflector (95)
+[2016.04.21-20.41.31:227][ 75]LogModuleManager: Shutting down and abandoning module HotReload (94)
+[2016.04.21-20.41.31:227][ 75]LogModuleManager: Shutting down and abandoning module MainFrame (93)
+[2016.04.21-20.41.31:227][ 75]LogModuleManager: Shutting down and abandoning module LevelEditor (92)
+[2016.04.21-20.41.31:228][ 75]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (91)
+[2016.04.21-20.41.31:228][ 75]LogModuleManager: Shutting down and abandoning module AssetRegistry (90)
+[2016.04.21-20.41.31:386][ 75]LogModuleManager: Shutting down and abandoning module ContentBrowser (89)
+[2016.04.21-20.41.31:387][ 75]LogModuleManager: Shutting down and abandoning module Paper2DEditor (88)
+[2016.04.21-20.41.31:387][ 75]LogModuleManager: Shutting down and abandoning module Maze_Of_Doom (87)
+[2016.04.21-20.41.31:387][ 75]LogModuleManager: Shutting down and abandoning module UdpMessaging (86)
+[2016.04.21-20.41.31:488][ 75]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeRuntime (85)
+[2016.04.21-20.41.31:488][ 75]LogModuleManager: Shutting down and abandoning module Paper2D (84)
+[2016.04.21-20.41.31:488][ 75]LogModuleManager: Shutting down and abandoning module WindowsMoviePlayer (83)
+[2016.04.21-20.41.31:490][ 75]LogModuleManager: Shutting down and abandoning module Media (82)
+[2016.04.21-20.41.31:490][ 75]LogModuleManager: Shutting down and abandoning module WmfMedia (81)
+[2016.04.21-20.41.31:491][ 75]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (80)
+[2016.04.21-20.41.31:491][ 75]LogModuleManager: Shutting down and abandoning module GameplayTasksEditor (79)
+[2016.04.21-20.41.31:491][ 75]LogModuleManager: Shutting down and abandoning module PropertyEditor (78)
+[2016.04.21-20.41.31:491][ 75]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (77)
+[2016.04.21-20.41.31:491][ 75]LogModuleManager: Shutting down and abandoning module FunctionalTesting (76)
+[2016.04.21-20.41.31:491][ 75]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (75)
+[2016.04.21-20.41.31:491][ 75]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (74)
+[2016.04.21-20.41.31:491][ 75]LogModuleManager: Shutting down and abandoning module MessageLog (73)
+[2016.04.21-20.41.31:491][ 75]LogModuleManager: Shutting down and abandoning module Sequencer (72)
+[2016.04.21-20.41.31:491][ 75]LogModuleManager: Shutting down and abandoning module AssetTools (71)
+[2016.04.21-20.41.31:491][ 75]LogModuleManager: Shutting down and abandoning module UMGEditor (70)
+[2016.04.21-20.41.31:491][ 75]LogModuleManager: Shutting down and abandoning module UMG (69)
+[2016.04.21-20.41.31:491][ 75]LogModuleManager: Shutting down and abandoning module Slate (68)
+[2016.04.21-20.41.31:491][ 75]LogModuleManager: Shutting down and abandoning module EditorStyle (67)
+[2016.04.21-20.41.31:493][ 75]LogModuleManager: Shutting down and abandoning module SessionServices (66)
+[2016.04.21-20.41.31:493][ 75]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (65)
+[2016.04.21-20.41.31:493][ 75]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (64)
+[2016.04.21-20.41.31:493][ 75]LogModuleManager: Shutting down and abandoning module XAudio2 (63)
+[2016.04.21-20.41.31:493][ 75]LogModuleManager: Shutting down and abandoning module Networking (61)
+[2016.04.21-20.41.31:493][ 75]LogModuleManager: Shutting down and abandoning module Core (60)
+[2016.04.21-20.41.31:493][ 75]LogModuleManager: Shutting down and abandoning module KismetCompiler (59)
+[2016.04.21-20.41.31:493][ 75]LogModuleManager: Shutting down and abandoning module PhysXFormats (58)
+[2016.04.21-20.41.31:493][ 75]LogModuleManager: Shutting down and abandoning module MeshUtilities (57)
+[2016.04.21-20.41.31:493][ 75]LogModuleManager: Shutting down and abandoning module DerivedDataCache (56)
+[2016.04.21-20.41.31:582][ 75]LogDerivedDataCache: Shutdown
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (55)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module ShaderFormatD3D (54)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module MetalShaderFormat (53)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (52)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module TextureFormatPVR (51)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (50)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (49)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module ImageWrapper (48)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (47)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module TextureFormatAndroid (46)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module AudioFormatOpus (45)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module AudioFormatOgg (44)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module AudioFormatADPCM (43)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (42)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module LinuxServerTargetPlatform (41)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module LinuxNoEditorTargetPlatform (40)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module Messaging (39)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module IOSTargetPlatform (38)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module HTML5TargetPlatform (37)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module Android_PVRTCTargetPlatform (36)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module Android_MultiTargetPlatform (35)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module Android_ETC2TargetPlatform (34)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module Android_ETC1TargetPlatform (33)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module Android_DXTTargetPlatform (32)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module Android_ATCTargetPlatform (31)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module Android_ASTCTargetPlatform (30)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (29)
+[2016.04.21-20.41.31:582][ 75]LogModuleManager: Shutting down and abandoning module WindowsTargetPlatform (28)
+[2016.04.21-20.41.31:583][ 75]LogModuleManager: Shutting down and abandoning module WindowsServerTargetPlatform (27)
+[2016.04.21-20.41.31:583][ 75]LogModuleManager: Shutting down and abandoning module WindowsNoEditorTargetPlatform (26)
+[2016.04.21-20.41.31:583][ 75]LogModuleManager: Shutting down and abandoning module WindowsClientTargetPlatform (25)
+[2016.04.21-20.41.31:583][ 75]LogModuleManager: Shutting down and abandoning module AllDesktopTargetPlatform (24)
+[2016.04.21-20.41.31:583][ 75]LogModuleManager: Shutting down and abandoning module TargetPlatform (23)
+[2016.04.21-20.41.31:583][ 75]LogModuleManager: Shutting down and abandoning module InputCore (22)
+[2016.04.21-20.41.31:583][ 75]LogModuleManager: Shutting down and abandoning module Settings (21)
+[2016.04.21-20.41.31:583][ 75]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (19)
+[2016.04.21-20.41.31:583][ 75]LogModuleManager: Shutting down and abandoning module HTTP (18)
+[2016.04.21-20.41.32:584][ 75]LogModuleManager: Shutting down and abandoning module XMPP (17)
+[2016.04.21-20.41.32:584][ 75]LogModuleManager: Shutting down and abandoning module OculusRift (16)
+[2016.04.21-20.41.32:584][ 75]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (15)
+[2016.04.21-20.41.32:584][ 75]LogModuleManager: Shutting down and abandoning module TextureCompressor (14)
+[2016.04.21-20.41.32:584][ 75]LogModuleManager: Shutting down and abandoning module ShaderCore (13)
+[2016.04.21-20.41.32:584][ 75]LogModuleManager: Shutting down and abandoning module Landscape (12)
+[2016.04.21-20.41.32:584][ 75]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (11)
+[2016.04.21-20.41.32:589][ 75]LogModuleManager: Shutting down and abandoning module OpenGLDrv (10)
+[2016.04.21-20.41.32:589][ 75]LogModuleManager: Shutting down and abandoning module D3D11RHI (9)
+[2016.04.21-20.41.32:589][ 75]LogModuleManager: Shutting down and abandoning module AnimGraphRuntime (8)
+[2016.04.21-20.41.32:589][ 75]LogModuleManager: Shutting down and abandoning module Renderer (7)
+[2016.04.21-20.41.32:589][ 75]LogModuleManager: Shutting down and abandoning module Engine (6)
+[2016.04.21-20.41.32:589][ 75]LogModuleManager: Shutting down and abandoning module CoreUObject (5)
+[2016.04.21-20.41.32:589][ 75]LogModuleManager: Shutting down and abandoning module NetworkFile (4)
+[2016.04.21-20.41.32:589][ 75]LogModuleManager: Shutting down and abandoning module StreamingFile (3)
+[2016.04.21-20.41.32:589][ 75]LogModuleManager: Shutting down and abandoning module SandboxFile (2)
+[2016.04.21-20.41.32:589][ 75]LogModuleManager: Shutting down and abandoning module PakFile (1)
+[2016.04.21-20.41.32:592][ 75]LogExit: Exiting.
+[2016.04.21-20.41.32:595][ 75]Log file closed, 04/21/16 13:41:32
