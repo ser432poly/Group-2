@@ -15,6 +15,18 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define Maze_Of_Doom_Source_Maze_Of_Doom_Room_h_11_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(exechasEnemy) \
+	{ \
+		P_FINISH; \
+		*(bool*)Z_Param__Result=this->hasEnemy(); \
+	} \
+ \
+	DECLARE_FUNCTION(exechasPowerUp) \
+	{ \
+		P_FINISH; \
+		*(bool*)Z_Param__Result=this->hasPowerUp(); \
+	} \
+ \
 	DECLARE_FUNCTION(execisEndRoom) \
 	{ \
 		P_FINISH; \
@@ -70,6 +82,18 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 
 #define Maze_Of_Doom_Source_Maze_Of_Doom_Room_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(exechasEnemy) \
+	{ \
+		P_FINISH; \
+		*(bool*)Z_Param__Result=this->hasEnemy(); \
+	} \
+ \
+	DECLARE_FUNCTION(exechasPowerUp) \
+	{ \
+		P_FINISH; \
+		*(bool*)Z_Param__Result=this->hasPowerUp(); \
+	} \
  \
 	DECLARE_FUNCTION(execisEndRoom) \
 	{ \

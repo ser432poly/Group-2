@@ -24,8 +24,9 @@ class ARoom;
  \
 	DECLARE_FUNCTION(execCreateLevel) \
 	{ \
+		P_GET_PROPERTY(UIntProperty,Z_Param_level); \
 		P_FINISH; \
-		this->CreateLevel(); \
+		this->CreateLevel(Z_Param_level); \
 	}
 
 
@@ -39,8 +40,9 @@ class ARoom;
  \
 	DECLARE_FUNCTION(execCreateLevel) \
 	{ \
+		P_GET_PROPERTY(UIntProperty,Z_Param_level); \
 		P_FINISH; \
-		this->CreateLevel(); \
+		this->CreateLevel(Z_Param_level); \
 	}
 
 

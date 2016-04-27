@@ -14,7 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeMaze_Of_Doom() {}
 		FNativeFunctionRegistrar::RegisterFunction(ALevelGenerator::StaticClass(),"CreateLevel",(Native)&ALevelGenerator::execCreateLevel);
 		FNativeFunctionRegistrar::RegisterFunction(ALevelGenerator::StaticClass(),"getDone",(Native)&ALevelGenerator::execgetDone);
 	}
-	IMPLEMENT_CLASS(ALevelGenerator, 3459658381);
+	IMPLEMENT_CLASS(ALevelGenerator, 3361585184);
 	void AMaze_Of_DoomCharacter::StaticRegisterNativesAMaze_Of_DoomCharacter()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AMaze_Of_DoomCharacter::StaticClass(),"CollectPickups",(Native)&AMaze_Of_DoomCharacter::execCollectPickups);
@@ -46,11 +46,13 @@ void EmptyLinkFunctionForGeneratedCodeMaze_Of_Doom() {}
 		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"getType",(Native)&ARoom::execgetType);
 		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"getX",(Native)&ARoom::execgetX);
 		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"getY",(Native)&ARoom::execgetY);
+		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"hasEnemy",(Native)&ARoom::exechasEnemy);
+		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"hasPowerUp",(Native)&ARoom::exechasPowerUp);
 		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"isEndRoom",(Native)&ARoom::execisEndRoom);
 		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"setDoor",(Native)&ARoom::execsetDoor);
 		FNativeFunctionRegistrar::RegisterFunction(ARoom::StaticClass(),"setPos",(Native)&ARoom::execsetPos);
 	}
-	IMPLEMENT_CLASS(ARoom, 767768938);
+	IMPLEMENT_CLASS(ARoom, 2401157448);
 FName MAZE_OF_DOOM_WasCollected = FName(TEXT("WasCollected"));
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
@@ -83,6 +85,8 @@ FName MAZE_OF_DOOM_WasCollected = FName(TEXT("WasCollected"));
 	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_getType();
 	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_getX();
 	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_getY();
+	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_hasEnemy();
+	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_hasPowerUp();
 	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_isEndRoom();
 	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_setDoor();
 	MAZE_OF_DOOM_API class UFunction* Z_Construct_UFunction_ARoom_setPos();
@@ -91,11 +95,16 @@ FName MAZE_OF_DOOM_WasCollected = FName(TEXT("WasCollected"));
 	MAZE_OF_DOOM_API class UPackage* Z_Construct_UPackage_Maze_Of_Doom();
 	UFunction* Z_Construct_UFunction_ALevelGenerator_CreateLevel()
 	{
+		struct LevelGenerator_eventCreateLevel_Parms
+		{
+			int32 level;
+		};
 		UObject* Outer=Z_Construct_UClass_ALevelGenerator();
 		static UFunction* ReturnFunction = NULL;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("CreateLevel"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535);
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("CreateLevel"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535, sizeof(LevelGenerator_eventCreateLevel_Parms));
+			UProperty* NewProp_level = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("level"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(level, LevelGenerator_eventCreateLevel_Parms), 0x0000000000000080);
 			ReturnFunction->Bind();
 			ReturnFunction->StaticLink();
 #if WITH_METADATA
@@ -151,7 +160,7 @@ FName MAZE_OF_DOOM_WasCollected = FName(TEXT("WasCollected"));
 				OuterClass->LinkChild(Z_Construct_UFunction_ALevelGenerator_CreateLevel());
 				OuterClass->LinkChild(Z_Construct_UFunction_ALevelGenerator_getDone());
 
-				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ALevelGenerator_CreateLevel()); // 392883470
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ALevelGenerator_CreateLevel()); // 3345243181
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ALevelGenerator_getDone()); // 1912881339
 				OuterClass->StaticLink();
 #if WITH_METADATA
@@ -546,6 +555,54 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_ARoom_hasEnemy()
+	{
+		struct Room_eventhasEnemy_Parms
+		{
+			bool ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_ARoom();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("hasEnemy"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x14020401, 65535, sizeof(Room_eventhasEnemy_Parms));
+			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, Room_eventhasEnemy_Parms, bool);
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_Native) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, Room_eventhasEnemy_Parms), 0x0000000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, Room_eventhasEnemy_Parms), sizeof(bool), true);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Room"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Room.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Getter"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ARoom_hasPowerUp()
+	{
+		struct Room_eventhasPowerUp_Parms
+		{
+			bool ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_ARoom();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("hasPowerUp"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x14020401, 65535, sizeof(Room_eventhasPowerUp_Parms));
+			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, Room_eventhasPowerUp_Parms, bool);
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_Native) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, Room_eventhasPowerUp_Parms), 0x0000000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, Room_eventhasPowerUp_Parms), sizeof(bool), true);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Room"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Room.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Getter"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UFunction* Z_Construct_UFunction_ARoom_isEndRoom()
 	{
 		struct Room_eventisEndRoom_Parms
@@ -642,6 +699,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_getType());
 				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_getX());
 				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_getY());
+				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_hasEnemy());
+				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_hasPowerUp());
 				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_isEndRoom());
 				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_setDoor());
 				OuterClass->LinkChild(Z_Construct_UFunction_ARoom_setPos());
@@ -651,6 +710,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_getType()); // 2466036292
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_getX()); // 744461016
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_getY()); // 4094742182
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_hasEnemy()); // 2304598280
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_hasPowerUp()); // 3074704286
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_isEndRoom()); // 1437415629
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_setDoor()); // 1927681319
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ARoom_setPos()); // 126879841
@@ -675,8 +736,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Maze_Of_Doom")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x88809577;
-			Guid.B = 0x8866F733;
+			Guid.A = 0x5DC2B0FB;
+			Guid.B = 0xBFEFE034;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);
