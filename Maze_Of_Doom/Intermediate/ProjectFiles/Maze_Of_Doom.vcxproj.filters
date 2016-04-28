@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\Maze_Of_Doom.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{0BE246C2-1ADD-423F-89A0-C18407F8649B}</UniqueIdentifier>
+			<UniqueIdentifier>{3590631F-8F05-4B16-BF39-B643C9BD6C35}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\Maze_Of_Doom.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{D295616A-3215-4680-8B66-F6AC94F9DC81}</UniqueIdentifier>
+			<UniqueIdentifier>{5A1FF7CE-33D9-41CC-B44F-FCBD584E68D4}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -31,8 +31,20 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\Maze_Of_Doom">
-			<UniqueIdentifier>{C472BD7F-5C0B-42AF-8267-9265D89E2F02}</UniqueIdentifier>
+			<UniqueIdentifier>{BC799ECF-55BA-4502-9111-2C1DFD6F03A0}</UniqueIdentifier>
 		</Filter>
+		<ClCompile Include="..\..\Source\Maze_Of_Doom\EnergyPickup.cpp">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Maze_Of_Doom\EnergyPickup.h">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Maze_Of_Doom\LevelGenerator.cpp">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Maze_Of_Doom\LevelGenerator.h">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</ClInclude >
 		<None Include="..\..\Source\Maze_Of_Doom\Maze_Of_Doom.Build.cs">
 			<Filter>Source\Maze_Of_Doom</Filter>
 		</None >
@@ -58,6 +70,12 @@
 			<Filter>Source\Maze_Of_Doom</Filter>
 		</ClCompile >
 		<ClInclude Include="..\..\Source\Maze_Of_Doom\Pickup.h">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Maze_Of_Doom\Room.cpp">
+			<Filter>Source\Maze_Of_Doom</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Maze_Of_Doom\Room.h">
 			<Filter>Source\Maze_Of_Doom</Filter>
 		</ClInclude >
 	</ItemGroup>
