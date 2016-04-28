@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\Maze_Of_Doom.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{3590631F-8F05-4B16-BF39-B643C9BD6C35}</UniqueIdentifier>
+			<UniqueIdentifier>{8D74D213-A9A3-465D-9C5E-54BB9E062CE7}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\Maze_Of_Doom.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{5A1FF7CE-33D9-41CC-B44F-FCBD584E68D4}</UniqueIdentifier>
+			<UniqueIdentifier>{2E90907E-7232-4644-9A1F-A070870E88B9}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -31,7 +31,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\Maze_Of_Doom">
-			<UniqueIdentifier>{BC799ECF-55BA-4502-9111-2C1DFD6F03A0}</UniqueIdentifier>
+			<UniqueIdentifier>{9AF2E5F4-F55F-4F66-92F5-3F7E9E4A473B}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\Maze_Of_Doom\EnergyPickup.cpp">
 			<Filter>Source\Maze_Of_Doom</Filter>
